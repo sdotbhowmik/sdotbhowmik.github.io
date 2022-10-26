@@ -268,6 +268,32 @@ section .title::after{
     background: none;
 }
 
+.about__info{
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: var(--mb-2-5);
+}
+
+.about__info-title{
+    font-size: var(--h2--font-size);
+}
+.about__info-name{
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+}
+
+.about__info-title,
+.about__info-name{
+    display: block;
+    text-align: center;
+}
+.about__buttons{
+    display: flex;
+    justify-content: center;
+}
+
+
 /* services section styling */
 .services, .projects{
     color:#fff;
@@ -392,6 +418,10 @@ section .title::after{
     width: 70%;
 }
 
+
+
+
+
 /* projects section styling */
 .projects .title::after{
     content: "Visit my github page to views my prjects";
@@ -438,15 +468,15 @@ section .title::after{
   display: inline-block;
 }
 .projects .carousel .card img{
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 5px solid teal;
+    border-radius: 10%;
+    border: 2px solid red;
     transition: all 0.3s ease;
 }
 .projects .carousel .card:hover img{
-    border-color: #fff;
+    border-color: teal;
 }
 .owl-dots{
     text-align: center;
