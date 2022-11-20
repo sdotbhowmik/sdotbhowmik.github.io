@@ -846,7 +846,7 @@ hr {
 
 /*---Colors---*/
 /* Change Favourite color*/
-   --hue-color: 283 ; /*Purple 250- Green 142 - Blue 230 - Pink 340*/
+   --hue-color: 180 ; /*Purple 250- Green 142 - Blue 230 - Pink 340*/
 
 /* HSL color mode */
    --first-color: hsl(var(--hue-color), 79%, 32%);
