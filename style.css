@@ -545,7 +545,7 @@ section .title::after{
 .projects .carousel .card .box a:link, a:visited{
   background-color: white;
   color: teal;
-  border: 2px solid yellow;
+  border: 2px solid teal;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
