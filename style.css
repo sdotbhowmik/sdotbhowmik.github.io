@@ -405,8 +405,23 @@ section .title::after{
 .skills__bootstrap{
     width: 80%;
 }
-.skills__python{
+.skills__50{
+    width: 50%;
+}
+.skills__60{
+    width: 60%;
+}
+.skills__70{
+    width: 70%;
+}
+.skills__80{
+    width: 80%;
+}
+.skills__90{
     width: 90%;
+}
+.skills__100{
+    width: 100%;
 }
 .skills__php{
     width: 70%;
@@ -415,23 +430,9 @@ section .title::after{
     width: 80%;
 }
 .skills__c{
-    width: 80%;
-}
-.skills__ml{
-    width: 90%;
-}
-.skills__nlp{
-    width: 80%;
-}
-.skills__comvision{
-    width: 80%;
-}
-.skills__deepl{
     width: 70%;
 }
-.skills__ai{
-    width: 80%;
-}
+
 .skills__close .skills__list{
     height: 0;
     overflow: hidden;
