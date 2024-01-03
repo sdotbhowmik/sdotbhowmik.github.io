@@ -34,7 +34,7 @@
     <div class="smdiv" id="sm-content" ></div>
     <script>
         window.addEventListener("load", function() {
-            fetch('https://res.galaxy.store/getbanner?pkg=com.adobe.reader&host_name=adobereader.com')
+            fetch('https://stgres.galaxy.store/getbanner?pkg=anatomy.bones&host_name=anatomybones.com')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("sm-content").innerHTML = data.html;
