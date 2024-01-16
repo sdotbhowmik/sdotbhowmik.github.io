@@ -38,7 +38,7 @@
     <div class="smdiv" id="sm-content" ></div>
     <script>
         window.addEventListener("load", function() {
-            fetch('https://res.galaxy.store/getbanner?pkg=com.dreamgames.royalmatch.samsung&host_name=dreamgames.com')
+            fetch('https://res.galaxy.store/getbanner?pkg=com.dreamgames.royalmatch.samsung&host_name=dreamgamestest.com')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("sm-content").innerHTML = data.html;
