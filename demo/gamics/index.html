@@ -38,7 +38,7 @@
     <div class="smdiv" id="sm-content" ></div>
     <script>
         window.addEventListener("load", function() {
-            fetch('https://stgres.galaxy.store/getbanner?pkg=com.HoYoverse.hkrpgsamsung&host_name=test.honkairail.com')
+            fetch('https://stgres.galaxy.store/getbanner?pkg=com.matteljv.uno.samsung&host_name=uno')
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById("sm-content").innerHTML = data.html;
