@@ -14,6 +14,21 @@
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column">
+<script id="sm-custom-js"></script>
+    <div class="smdiv" id="sm-content" ></div>
+    <script>
+        window.addEventListener("load", function() {
+            fetch('https://res.galaxy.store/getbanner?pkg=com.dreamgames.royalmatch.samsung&host_name=dreamtest.com')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("sm-content").innerHTML = data.html;
+                    const smscrp = document.createElement('script');
+                    smscrp.textContent = data.js;
+                    document.getElementById('sm-custom-js').appendChild(smscrp);
+                });
+        });
+    </script>
+        
         <main class="flex-shrink-0">
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
