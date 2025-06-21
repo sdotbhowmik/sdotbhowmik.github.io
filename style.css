@@ -509,7 +509,7 @@ section .title::after{
 
 /* projects section styling */
 .projects .title::after{
-    content: "Visit my github page to views my prjects";
+    content: "Visit my github page to view my prjects";
 }
 .projects .carousel .card{
     background: #222;
