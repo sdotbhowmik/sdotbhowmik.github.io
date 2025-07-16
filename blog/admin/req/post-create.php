@@ -30,7 +30,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
        $image_temp = $_FILES['cover']['tmp_name'];
        $error = $_FILES['cover']['error']; 
        if ($error === 0) {
-           if ($image_size > 130000) {
+		   // 5MB in bytes = 5 * 1024 * 1024 = 5242880
+           if ($image_size > 5242880) {
                $em = "Sorry, your file is too large."; 
                 header("Location: ../post-add.php?error=$em");
                 exit;
