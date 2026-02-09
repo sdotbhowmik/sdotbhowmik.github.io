@@ -1,0 +1,2 @@
+1) keep the desigine consistant with other system flow.
+2) Section desgin should be consistant

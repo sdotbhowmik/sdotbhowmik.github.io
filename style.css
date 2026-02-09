@@ -185,7 +185,7 @@ section .title::after{
     font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
-    margin: auto 0 auto 30px;
+    margin: auto 0 auto 300px;
 }
 .home .home-content .text-1{
     font-size: 27px;
@@ -1046,4 +1046,3 @@ hr {
 .qualification__button.qualification__active{
     color: var(--first-color);
 }
-
