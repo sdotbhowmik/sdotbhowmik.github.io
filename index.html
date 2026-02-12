@@ -235,11 +235,60 @@
   </div> <!-- /.max-width -->
 </section>
 
+<!-- Certifications Separator -->
+<div class="cert-separator"></div>
+
+<!-- certifications section start -->
+<section class="certifications" id="certifications">
+  <div class="max-width">
+    <h2 class="title">My Certifications</h2>
+    <div class="cert-content">
+      
+      <!-- Certification 1 -->
+      <div class="cert-card">
+        <div class="cert-logo">
+          <img src="https://astqb.org/wp-content/uploads/2020/06/ISTQB-logo-300x211.jpg" alt="ISTQB Logo">
+        </div>
+        <h3>ISTQB CTFL (Certified Tester Foundation Level)</h3>
+        <div class="cert-details">
+          <div class="cert-item">
+            <span class="cert-label">Status:</span>
+            <span class="cert-status achieved">Achieved</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-label">Year:</span>
+            <span class="cert-value">2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification 2 -->
+      <div class="cert-card">
+        <div class="cert-logo">
+          <img src="https://astqb.org/wp-content/uploads/2020/06/ISTQB-logo-300x211.jpg" alt="ISTQB Logo">
+        </div>
+        <h3>ISTQB CTAL-TM (Certified Tester Advanced Level - Test Manager)</h3>
+        <div class="cert-details">
+          <div class="cert-item">
+            <span class="cert-label">Status:</span>
+            <span class="cert-status in-progress">In-Progress</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-label">Year:</span>
+            <span class="cert-value">2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /.cert-content -->
+  </div> <!-- /.max-width -->
+</section>
+
     
  <!-- services section start -->
 <section class="services" id="services">
   <div class="max-width">
-    <h2 class="title">My Services</h2>
+    <h2 class="title">My Expertise</h2>
     <!-- First Row of Cards -->
     <div class="serv-content">
       <!-- Functional Testing Card -->
@@ -247,13 +296,16 @@
         <div class="box">
           <i class="fa fa-cogs"></i>
           <div class="text">Functional Testing</div>
-            <ul  align="left">
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
               <li>Validate requirements against test cases and acceptance criteria.</li>
               <li>Triage defects, prioritize fixes, and track to resolution.</li>
               <li>Ensure end-to-end coverage of user workflows and edge cases.</li>
               <li>Report critical metrics (pass/fail rates, defect density) to stakeholders.</li>
               <li>Maintain compliance with testing standards (e.g., ISO 29119).</li>
             </ul>
+          </div>
         </div>
       </div>
       <!-- Performance Testing Card -->
@@ -261,13 +313,16 @@
         <div class="box">
           <i class="fa fa-tachometer"></i>
           <div class="text">Performance Testing</div>
-            <ul  align="left">
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
               <li>Define non-functional requirements (response times, scalability).</li>
               <li>Design load models (peak/stress/endurance) and test environments.</li>
               <li>Identify bottlenecks (CPU, DB, memory) and drive optimizations.</li>
               <li>Automate scenarios using tools like JMeter or LoadRunner.</li>
               <li>Recommend infrastructure upgrades based on capacity limits.</li>
             </ul>
+          </div>
         </div>
       </div>
       <!-- API Testing Card -->
@@ -275,13 +330,16 @@
         <div class="box">
           <i class="fa fa-plug"></i>
           <div class="text">API Testing</div>
-            <ul  align="left">
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
               <li>Verify API contracts (OpenAPI/Swagger) for consistency.</li>
               <li>Automate tests (Postman/RestAssured) with CI/CD integration.</li>
               <li>Validate security (auth, encryption, OWASP API Top 10).</li>
               <li>Ensure data integrity in payloads and error handling.</li>
               <li>Benchmark performance (latency, throughput, error rates).</li>
             </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -301,13 +359,16 @@
         <div class="box">
           <i class="fa fa-user"></i>
           <div class="text">UX Testing</div>
-            <ul  align="left">
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
               <li>Apply usability heuristics (Nielsen) and accessibility (WCAG).</li>
               <li>Measure task success rates and user satisfaction (SUS).</li>
               <li>Collaborate with designers to fix pain points.</li>
               <li>Test responsiveness across devices/viewports.</li>
               <li>Facilitate A/B tests for feature optimization.</li>
             </ul>
+          </div>
         </div>
       </div>
       <!-- Mobile Testing Card -->
@@ -315,6 +376,8 @@
         <div class="box">
           <i class="fa fa-android"></i>
           <div class="text">Mobile Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
             <ul align="left">
               <li>Cover devices/platforms (iOS/Android versions, screen sizes).</li>
               <li>Test real-world conditions (network, interruptions, offline).</li>
@@ -322,6 +385,7 @@
               <li>Monitor resource usage (battery, memory, launch time).</li>
               <li>Assess security risks (data leaks, root detection).</li>
             </ul>
+          </div>
         </div>
       </div>
       <!-- Game Testing Card -->
@@ -329,6 +393,8 @@
         <div class="box">
           <i class="fa fa-gamepad"></i>
           <div class="text">Game Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
             <ul align="left">
               <li>Evaluate playability (mechanics, difficulty, fun factor).</li>
               <li>Verify immersion (audio-visual sync, physics, story flow).</li>
@@ -336,10 +402,21 @@
               <li>Prevent exploits (cheats, progression skips, duping).</li>
               <li>Validate localization (translations, cultural compliance).</li>
             </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- Service Details Modal -->
+  <div id="serviceModal" class="modal" style="display:none">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 class="modal-title"></h3>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
 </section>
 <!-- services section end -->
 
@@ -752,42 +829,137 @@
     <section class="projects" id="projects">
       <div class="max-width">
         <h2 class="title">My Projects</h2>
-        <div class="carousel owl-carousel">
-          <div class="card">
-            <div class="box">
-              <img src="images/selenium-python.png" alt="">
-              <div class="text">Selenium Python</div>
-              <a href="#" target="_blank">Demo</a>
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+          <div class="carousel owl-carousel">
+            
+            <!-- Project 1 -->
+            <div class="card">
+              <div class="box">
+                <div class="project-image">
+                  <img src="images/selenium-python.png" alt="Selenium Python">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Selenium Python Automation</h3>
+                  <p class="project-description">A comprehensive web automation framework built with Selenium and Python, designed for testing web applications with advanced locator strategies and page object patterns.</p>
+                  <div class="project-stack">
+                    <h4>Tools & Stack:</h4>
+                    <ul>
+                      <li>Python 3.x</li>
+                      <li>Selenium WebDriver</li>
+                      <li>pytest</li>
+                      <li>Page Object Model</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="images/appium.png" alt="">
-              <div class="text">Appium Python</div>
-              <a href="https://github.com/sdotbhowmik/Appium-PythonDemo.git" target="_blank">Demo</a>
+
+            <!-- Project 2 -->
+            <div class="card">
+              <div class="box">
+                <div class="project-image">
+                  <img src="images/appium.png" alt="Appium Python">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Appium Mobile Automation</h3>
+                  <p class="project-description">Mobile test automation framework using Appium and Python for testing iOS and Android applications with cross-platform capabilities and native app support.</p>
+                  <div class="project-stack">
+                    <h4>Tools & Stack:</h4>
+                    <ul>
+                      <li>Appium Server</li>
+                      <li>Python</li>
+                      <li>XCUITest (iOS)</li>
+                      <li>UiAutomator (Android)</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/sdotbhowmik/Appium-PythonDemo.git" class="btn-demo" target="_blank"><i class="fa fa-link"></i> View on GitHub</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="images/robot-framework.png" alt="">
-              <div class="text">RobotFramework UI</div>
-              <a href="https://github.com/sdotbhowmik/RobotFrameWorkPractice.git" target="_blank">Demo</a>
+
+            <!-- Project 3 -->
+            <div class="card">
+              <div class="box">
+                <div class="project-image">
+                  <img src="images/robot-framework.png" alt="RobotFramework UI">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">RobotFramework UI Testing</h3>
+                  <p class="project-description">Keyword-driven test automation framework using Robot Framework for UI testing with built-in libraries and easy-to-read test cases in plain English syntax.</p>
+                  <div class="project-stack">
+                    <h4>Tools & Stack:</h4>
+                    <ul>
+                      <li>Robot Framework</li>
+                      <li>SeleniumLibrary</li>
+                      <li>BDD Testing</li>
+                      <li>HTML Reports</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="https://github.com/sdotbhowmik/RobotFrameWorkPractice.git" class="btn-demo" target="_blank"><i class="fa fa-link"></i> View on GitHub</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="images/API.png" alt="">
-              <div class="text">RobotFramework API</div>
-              <a href="#" target="_blank">Demo</a>
+
+            <!-- Project 4 -->
+            <div class="card">
+              <div class="box">
+                <div class="project-image">
+                  <img src="images/API.png" alt="RobotFramework API">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">RobotFramework API Testing</h3>
+                  <p class="project-description">RESTful API testing framework using Robot Framework with built-in HTTP library for validating API endpoints, payloads, and response codes efficiently.</p>
+                  <div class="project-stack">
+                    <h4>Tools & Stack:</h4>
+                    <ul>
+                      <li>Robot Framework</li>
+                      <li>RequestsLibrary</li>
+                      <li>JSON Validation</li>
+                      <li>REST API Testing</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="box">
-              <img src="images/selenium-framework.png" alt="">
-              <div class="text">Selenium Framework</div>
-              <a href="#" target="_blank">Demo</a>
+
+            <!-- Project 5 -->
+            <div class="card">
+              <div class="box">
+                <div class="project-image">
+                  <img src="images/selenium-framework.png" alt="Selenium Framework">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Selenium Testing Framework</h3>
+                  <p class="project-description">Enterprise-grade test automation framework based on Selenium with advanced features including data-driven testing, parallel execution, and comprehensive reporting.</p>
+                  <div class="project-stack">
+                    <h4>Tools & Stack:</h4>
+                    <ul>
+                      <li>Selenium 4.x</li>
+                      <li>TestNG</li>
+                      <li>Extent Reports</li>
+                      <li>Data-Driven Testing</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="project-actions">
+                  <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+                </div>
+              </div>
             </div>
+
           </div>
+          <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
         </div>
       </div>
     </section>
@@ -857,7 +1029,7 @@
     </section>
     <!-- footer section start -->
     <footer>
-      <span>Redesign By <a href="https:www.facebook.com/sdotbhowmik" target="_blank">Subrata K. Bhowmik</a> | <span class="fa fa-copyright"></span> 2025 All rights reserved. </span>
+      <span>Designed and developed By <a href="https:www.facebook.com/sdotbhowmik" target="_blank">Subrata K. Bhowmik</a> | <span class="fa fa-copyright"></span> 2026 All rights reserved. </span>
     </footer>
     <script src="script.js"></script>
   </body>
