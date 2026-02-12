@@ -49,10 +49,11 @@ $(document).ready(function(){
     });
 
     // owl carousel script
-    $('.carousel').owlCarousel({
+    var carousel = $('.carousel').owlCarousel({
         margin: 20,
         loop: true,
-        autoplayTimeOut: 2000,
+        autoplay: true,
+        autoplayTimeout: 5000,
         autoplayHoverPause: true,
         responsive: {
             0:{
@@ -60,15 +61,45 @@ $(document).ready(function(){
                 nav: false
             },
             600:{
-                items: 2,
+                items: 1,
                 nav: false
             },
             1000:{
-                items: 3,
+                items: 1,
                 nav: false
             }
         }
     });
+
+    // Handle previous button click
+    $('.carousel-btn-prev').click(function(){
+        carousel.trigger('prev.owl.carousel');
+    });
+
+    // Handle next button click
+    $('.carousel-btn-next').click(function(){
+        carousel.trigger('next.owl.carousel');
+    });
+    // Services: open modal with details when 'View More' clicked
+    $('.btn-view-more').on('click', function(e){
+        e.preventDefault();
+        var $card = $(this).closest('.card');
+        var title = $card.find('.text').first().text().trim();
+        var content = $card.find('.service-details').html() || '<p>No details available.</p>';
+        $('#serviceModal .modal-title').text(title);
+        $('#serviceModal .modal-body').html(content);
+        $('#serviceModal').fadeIn(180);
+    });
+
+    // Close modal
+    $(document).on('click', '#serviceModal .modal-close', function(){
+        $('#serviceModal').fadeOut(120);
+    });
+    // close when clicking outside content
+    $(document).on('click', '#serviceModal', function(e){
+        if(e.target === this) $('#serviceModal').fadeOut(120);
+    });
+    
 });
 
 /*== Accordion skills ==*/

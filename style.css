@@ -306,28 +306,35 @@ section .title::after{
 .services .title::after,
 .projects .title::after{
     background: #111;
-    content: "what i offer";
+    content: "In which I am particularly skilled";
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
-    background: #848fa1;
-    text-align: Center;
-    border-radius: 6px;
-    padding: 20px 25px;
+    /* glass effect */
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    text-align: center;
+    border-radius: 12px;
+    padding: 22px 24px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
 }
 .services .serv-content .card:hover{
-    background: teal;
+    transform: translateY(-8px) scale(1.02);
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 18px 36px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.03);
 }
 .services .serv-content .card .box{
     transition: all 0.3s ease;
 }
 .services .serv-content .card:hover .box{
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
 .services .serv-content .card i{
-    font-size: 50px;
+    font-size: 46px;
     color: teal;
     transition: color 0.3s ease;
 }
@@ -335,9 +342,65 @@ section .title::after{
     color: #fff;
 }
 .services .serv-content .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 12px 0 10px 0;
+}
+
+/* View More button and modal for services */
+.btn-view-more{
+    background: transparent;
+    color: teal;
+    border: 2px solid rgba(0,128,128,0.9);
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-view-more:hover{
+    background: teal;
+    color: #fff;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+.modal-content{
+    background: rgba(255,255,255,0.98);
+    color: #222;
+    width: 94%;
+    max-width: 720px;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+}
+.modal-close{
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    font-size: 26px;
+    color: #666;
+    cursor: pointer;
+}
+.modal-title{
+    font-size: 20px;
+    color: teal;
+    margin: 0 0 10px 0;
+}
+.modal-body{
+    color: #333;
+    line-height: 1.6;
 }
 
 /* achievements section styling */
@@ -359,19 +422,27 @@ section .title::after{
     justify-content: space-between;
 }
 .achievements .achv-content .achv-card{
-    width: calc(25% - 20px);
-    background: #848fa1;
+    width: calc(50% - 10px);
+    /* glass effect */
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.06);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
     text-align: left;
-    border-radius: 6px;
-    padding: 20px 25px;
+    border-radius: 12px;
+    padding: 22px 24px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.02);
 }
 .achievements .achv-content .achv-card:hover{
-    background: teal;
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.06);
+    box-shadow: 0 20px 44px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.03);
 }
 .achievements .achv-content .achv-card .achv-icon{
     transition: all 0.3s ease;
@@ -399,6 +470,132 @@ section .title::after{
     color: #ccc;
     text-align: justify;
     line-height: 1.5;
+}
+.achievements .achv-details{
+    width: 100%;
+}
+.achievements .detail-item{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 8px;
+    font-size: 13px;
+}
+.achievements .detail-label{
+    font-weight: 600;
+    margin-right: 8px;
+    color: #fff;
+}
+.achievements .detail-value{
+    color: #ddd;
+    flex-wrap: wrap;
+}
+
+/* certifications separator */
+.cert-separator{
+    height: 3px;
+    background: linear-gradient(to right, #111, teal, #111);
+    margin: 0;
+    padding: 0;
+}
+
+/* certifications section styling */
+.certifications{
+    color: #333;
+    background: #fff;
+}
+.certifications .title::before{
+    background: #111;
+}
+.certifications .title::after{
+    background: #fff;
+    content: "credentials";
+}
+.certifications .cert-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.certifications .cert-content .cert-card{
+    width: calc(50% - 10px);
+    background: #f8f8f8;
+    text-align: center;
+    border-radius: 8px;
+    padding: 30px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.certifications .cert-content .cert-card:hover{
+    background: #fff;
+    transform: translateY(-5px);
+    border-color: teal;
+    box-shadow: 0 8px 20px rgba(0, 128, 128, 0.2);
+}
+.certifications .cert-content .cert-card .cert-logo{
+    transition: all 0.3s ease;
+    margin-bottom: 20px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.certifications .cert-content .cert-card:hover .cert-logo{
+    transform: scale(1.1);
+}
+.certifications .cert-content .cert-card .cert-logo img{
+    max-height: 100px;
+    max-width: 100px;
+    object-fit: contain;
+}
+.certifications .cert-content .cert-card h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    color: #111;
+}
+.certifications .cert-details{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.certifications .cert-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+}
+.certifications .cert-label{
+    font-weight: 600;
+    color: teal;
+}
+.certifications .cert-value{
+    color: #333;
+}
+.certifications .cert-status{
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+}
+.certifications .cert-status.achieved{
+    background: rgba(0, 128, 128, 0.15);
+    color: teal;
+    border: 1px solid teal;
+}
+.certifications .cert-status.in-progress{
+    background: rgba(255, 165, 0, 0.15);
+    color: #ff8c00;
+    border: 1px solid #ff8c00;
 }
 
 /* skills section styling */
@@ -570,64 +767,197 @@ section .title::after{
 
 /* projects section styling */
 .projects .title::after{
-    content: "Visit my github page to view my prjects";
-}
-.projects .carousel .card{
-    background: #848fa1;
-    border-radius: 6px;
-    padding: 25px 35px;
-    text-align: center;
-    overflow: hidden;
-    transition: all 0.3s ease;
-	
-	
+    content: "---Most recent work---";
 }
 
-
-.projects .carousel .card:hover{
-    background: teal;
-}
-.projects .carousel .card .box{
+.carousel-container{
+    position: relative;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.carousel-btn{
+    background: teal;
+    color: #fff;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 18px;
     transition: all 0.3s ease;
-		
+    flex-shrink: 0;
 }
 
-.projects .carousel .card:hover .box{
-    transform: scale(1.05);
+.carousel-btn:hover{
+    background: #0a9999;
+    transform: scale(1.1);
 }
-.projects .carousel .card .text{
-    font-size: 25px;
-    font-weight: 500;
-    margin: 10px 0 7px 0;
+
+.carousel-btn i{
+    color: #fff;
 }
-.projects .carousel .card .box a:link, a:visited{
-  background-color: white;
-  color: teal;
-  border: 2px solid teal;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+
+.projects .carousel {
+    flex: 1;
 }
-.projects .carousel .card img{
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
-    border-radius: 10%;
-    border: 2px solid red;
+
+.projects .carousel .card{
+    background: #222;
+    border-radius: 8px;
+    padding: 0;
+    text-align: left;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+}
+
+.projects .carousel .card:hover{
+    background: #2a2a2a;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 128, 128, 0.3);
+}
+
+.projects .carousel .card .box{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
     transition: all 0.3s ease;
 }
-.projects .carousel .card:hover img{
-    border-color: teal;
+
+.projects .carousel .card .project-image{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #111;
+    flex-shrink: 0;
 }
+
+.projects .carousel .card .project-image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.projects .carousel .card:hover .project-image img{
+    transform: scale(1.1);
+}
+
+.projects .carousel .card .project-content{
+    flex: 1;
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.projects .carousel .card .project-title{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.projects .carousel .card .project-description{
+    font-size: 13px;
+    color: #ccc;
+    line-height: 1.4;
+    margin: 5px 0;
+}
+
+.projects .carousel .card .project-stack{
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.projects .carousel .card .project-stack h4{
+    font-size: 12px;
+    color: teal;
+    font-weight: 600;
+    margin: 3px 0;
+}
+
+.projects .carousel .card .project-stack ul{
+    list-style: none;
+    margin: 3px 0;
+    padding-left: 0;
+}
+
+.projects .carousel .card .project-stack ul li{
+    font-size: 11px;
+    color: #aaa;
+    padding: 2px 0;
+    padding-left: 12px;
+    position: relative;
+}
+
+.projects .carousel .card .project-stack ul li:before{
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: teal;
+    font-weight: bold;
+}
+
+.projects .carousel .card .project-actions{
+    padding-top: 10px;
+    border-top: 1px solid #333;
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.projects .carousel .card .btn-demo{
+    background-color: teal;
+    color: #fff;
+    border: 2px solid teal;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    flex: 1;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.projects .carousel .card .btn-demo:hover{
+    background-color: transparent;
+    color: teal;
+}
+
+.projects .carousel .card .btn-demo i{
+    font-size: 12px;
+}
+
+
+
 .owl-dots{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 30px;
 }
+
 .owl-dot{
     height: 13px;
     width: 13px;
@@ -840,6 +1170,10 @@ footer span a:hover{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
+    .certifications .cert-content .cert-card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
     .skills .skills-content .column,
     .contact .contact-content .column{
         width: 100%;
@@ -863,6 +1197,17 @@ footer span a:hover{
     .services .serv-content .card{
         width: 100%;
     }
+    .projects .carousel .card{
+        height: 500px;
+    }
+    .carousel-container{
+        gap: 10px;
+    }
+    .carousel-btn{
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 500px) {
@@ -879,6 +1224,43 @@ footer span a:hover{
     .achievements .achv-content .achv-card{
         width: 100%;
         margin-bottom: 20px;
+    }
+    .certifications .cert-content .cert-card{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .projects .carousel .card{
+        height: 420px;
+        flex-direction: column;
+    }
+    .projects .carousel .card .box{
+        flex-direction: column;
+    }
+    .projects .carousel .card .project-image{
+        width: 100%;
+        height: 200px;
+    }
+    .projects .carousel .card .project-content{
+        width: 100%;
+        padding: 15px;
+        max-height: 200px;
+    }
+    .projects .carousel .card .project-title{
+        font-size: 16px;
+    }
+    .projects .carousel .card .project-description{
+        font-size: 12px;
+    }
+    .projects .carousel .card .project-actions{
+        padding: 10px 15px;
+    }
+    .carousel-container{
+        flex-wrap: wrap;
+    }
+    .carousel-btn{
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
     }
     .contact .right form .fields{
         flex-direction: column;
