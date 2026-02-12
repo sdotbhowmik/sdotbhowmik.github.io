@@ -35,7 +35,7 @@ section{
     padding: 0 80px;
     margin: auto;
 }
-.about, .services, .skills, .projects, .contact, footer{
+.about, .services, .achievements, .skills, .projects, .contact, footer{
     font-family: 'Poppins', sans-serif;
 }
 .about .about-content, 
@@ -232,8 +232,8 @@ section .title::after{
     width: 45%;
 }
 .about .about-content .left img{
-    height: 550px;
-    width: 400px;
+    height: 820px;
+    width: 500px;
     object-fit: cover;
     border-radius: 6px;
 }
@@ -310,7 +310,7 @@ section .title::after{
 }
 .services .serv-content .card{
     width: calc(33% - 20px);
-    background: #222;
+    background: #848fa1;
     text-align: Center;
     border-radius: 6px;
     padding: 20px 25px;
@@ -338,6 +338,67 @@ section .title::after{
     font-size: 25px;
     font-weight: 500;
     margin: 10px 0 7px 0;
+}
+
+/* achievements section styling */
+.achievements{
+    color: #fff;
+    background: #111;
+}
+.achievements .title::before{
+    background: #fff;
+}
+.achievements .title::after{
+    background: #111;
+    content: "recognitions";
+}
+.achievements .achv-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+.achievements .achv-content .achv-card{
+    width: calc(25% - 20px);
+    background: #848fa1;
+    text-align: left;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.achievements .achv-content .achv-card:hover{
+    background: teal;
+}
+.achievements .achv-content .achv-card .achv-icon{
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+.achievements .achv-content .achv-card:hover .achv-icon{
+    transform: scale(1.2);
+}
+.achievements .achv-content .achv-card .achv-icon i{
+    font-size: 45px;
+    color: teal;
+    transition: color 0.3s ease;
+}
+.achievements .achv-content .achv-card:hover .achv-icon i{
+    color: #fff;
+}
+.achievements .achv-content .achv-card h3{
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.achievements .achv-content .achv-card p{
+    font-size: 14px;
+    color: #ccc;
+    text-align: justify;
+    line-height: 1.5;
 }
 
 /* skills section styling */
@@ -512,7 +573,7 @@ section .title::after{
     content: "Visit my github page to view my prjects";
 }
 .projects .carousel .card{
-    background: #222;
+    background: #848fa1;
     border-radius: 6px;
     padding: 25px 35px;
     text-align: center;
@@ -775,6 +836,10 @@ footer span a:hover{
         width: calc(50% - 10px);
         margin-bottom: 20px;
     }
+    .achievements .achv-content .achv-card{
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
     .skills .skills-content .column,
     .contact .contact-content .column{
         width: 100%;
@@ -810,6 +875,10 @@ footer span a:hover{
     .about .about-content .right .text,
     .skills .skills-content .left .text{
         font-size: 19px;
+    }
+    .achievements .achv-content .achv-card{
+        width: 100%;
+        margin-bottom: 20px;
     }
     .contact .right form .fields{
         flex-direction: column;
@@ -984,7 +1053,7 @@ hr {
 }
 .skills__open .skills__arrow{
     transform: rotate(-180deg);
-}zz
+}
 
 /*== Qualification ==*/
 
