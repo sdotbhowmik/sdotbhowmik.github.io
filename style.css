@@ -137,6 +137,73 @@ section .title::after{
     color: #fff;
 }
 
+/* dropdown menu styling */
+.navbar .menu li.dropdown {
+    position: relative;
+}
+
+.navbar .menu li.dropdown .dropdown-content {
+    display: none;
+    position: absolute;
+    background: #111;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 100%;
+    left: 0;
+    margin-left: -25px;
+    border-radius: 4px;
+    border-top: 3px solid teal;
+}
+
+.navbar .menu li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .menu li.dropdown .dropdown-content .dropdown-section {
+    padding: 10px 0;
+}
+
+.navbar .menu li.dropdown .dropdown-content .dropdown-section:not(:last-child) {
+    border-bottom: 1px solid #333;
+}
+
+.navbar .menu li.dropdown .dropdown-content .section-title {
+    color: teal;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 8px 20px 5px 20px;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.navbar .menu li.dropdown .dropdown-content a {
+    color: #fff;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    margin-left: 0;
+    transition: all 0.3s ease;
+}
+
+.navbar .menu li.dropdown .dropdown-content a:hover {
+    background: teal;
+    color: #fff;
+    padding-left: 25px;
+}
+
+.navbar.sticky .menu li.dropdown .dropdown-content {
+    background: #1a1a1a;
+    border-top: 3px solid teal;
+}
+
+.navbar.sticky .menu li.dropdown .dropdown-content a:hover {
+    background: teal;
+    color: #fff;
+}
+
 /* menu btn styling */
 .menu-btn{
     color: #fff;
@@ -1301,6 +1368,43 @@ footer span a:hover{
         margin: 20px 0;
         font-size: 25px;
     }
+    .navbar .menu li.dropdown .dropdown-content {
+        position: static;
+        display: none;
+        background: #1a1a1a;
+        box-shadow: none;
+        min-width: auto;
+        margin-left: 0;
+        border-top: 2px solid teal;
+        border-radius: 0;
+    }
+    .navbar .menu li.dropdown:hover .dropdown-content {
+        display: none;
+    }
+    .navbar .menu li.dropdown.active .dropdown-content {
+        display: block;
+    }
+    .navbar .menu li.dropdown .dropdown-content .dropdown-section {
+        padding: 10px 0;
+    }
+    .navbar .menu li.dropdown .dropdown-content .section-title {
+        color: teal;
+        font-size: 14px;
+        padding: 10px 0 5px 0;
+    }
+    .navbar .menu li.dropdown .dropdown-content a {
+        color: #fff;
+        padding: 10px 0;
+        display: block;
+        font-size: 18px;
+        margin: 0;
+    }
+    .navbar .menu li.dropdown .dropdown-content a:hover {
+        background: none;
+        color: teal;
+        padding-left: 0;
+    }
+
     .home .home-content .text-2{
         font-size: 70px;
     }
