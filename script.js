@@ -71,6 +71,67 @@ $(document).ready(function(){
         }
     });
 
+    // Achievements: open details modal when 'View Details' clicked
+    $(document).on('click', '.achv-view-btn', function(e){
+        e.preventDefault();
+        var $card = $(this).closest('.achv-card');
+        var title = $card.find('.achv-header h3').text().trim();
+        var img = $card.data('img') || $card.find('img').attr('src') || '';
+        var contribution = $card.data('contribution') || '';
+        var bodyHtml = '';
+        if(img) bodyHtml += '<div style="text-align:center;margin-bottom:12px;"><img src="'+img+'" alt="certificate" style="max-width:420px;max-height:280px;width:100%;height:auto;border-radius:6px;border:1px solid #eef3f8"/></div>';
+        bodyHtml += '<div class="achv-modal-contribution"><p>'+contribution+'</p></div>';
+        $('#achvModal .modal-title').text(title);
+        $('#achvModal .modal-body').html(bodyHtml);
+        $('#achvModal').fadeIn(180);
+    });
+
+    // Horizontal scroller autoplay + swipe + nav
+    (function(){
+        var $row = $('.achv-row');
+        if(!$row.length) return;
+
+        var autoTimer = null;
+        var autoDelay = 3000; // ms between auto scrolls
+        var animDuration = 600; // animation duration when moving
+
+        function scrollNext(){
+            var el = $row[0];
+            var cardWidth = el.querySelector('.achv-card')?.offsetWidth || Math.round(el.clientWidth/2);
+            var target = el.scrollLeft + cardWidth + 18; // include gap
+            var max = el.scrollWidth - el.clientWidth;
+            if(target > max) target = 0; // loop
+            $row.animate({scrollLeft: target}, animDuration);
+        }
+        function scrollPrev(){
+            var el = $row[0];
+            var cardWidth = el.querySelector('.achv-card')?.offsetWidth || Math.round(el.clientWidth/2);
+            var target = el.scrollLeft - (cardWidth + 18);
+            if(target < 0) target = Math.max(0, el.scrollWidth - el.clientWidth);
+            $row.animate({scrollLeft: target}, animDuration);
+        }
+
+        function startAuto(){ stopAuto(); autoTimer = setInterval(scrollNext, autoDelay); }
+        function stopAuto(){ if(autoTimer){ clearInterval(autoTimer); autoTimer = null; } }
+
+        // start
+        startAuto();
+
+        // pause on hover/focus
+        $row.on('mouseenter focusin', stopAuto);
+        $row.on('mouseleave focusout', startAuto);
+
+        // nav buttons
+        $('.achv-prev').on('click', function(){ stopAuto(); scrollPrev(); startAuto(); });
+        $('.achv-next').on('click', function(){ stopAuto(); scrollNext(); startAuto(); });
+
+        // basic touch swipe
+        var touchStartX = 0, touchStartScroll = 0, isTouching=false;
+        $row.on('touchstart', function(e){ stopAuto(); isTouching=true; touchStartX = e.originalEvent.touches[0].clientX; touchStartScroll = this.scrollLeft; });
+        $row.on('touchmove', function(e){ if(!isTouching) return; var x = e.originalEvent.touches[0].clientX; var dx = touchStartX - x; this.scrollLeft = touchStartScroll + dx; });
+        $row.on('touchend touchcancel', function(e){ isTouching=false; startAuto(); });
+    })();
+
     // Handle previous button click
     $('.carousel-btn-prev').click(function(){
         carousel.trigger('prev.owl.carousel');
@@ -99,6 +160,12 @@ $(document).ready(function(){
     $(document).on('click', '#serviceModal', function(e){
         if(e.target === this) $('#serviceModal').fadeOut(120);
     });
+
+    // Achievement modal close handlers
+    $(document).on('click', '#achvModal .modal-close', function(){
+        $('#achvModal').fadeOut(120);
+    });
+    $(document).on('click', '#achvModal', function(e){ if(e.target === this) $('#achvModal').fadeOut(120); });
     
 });
 
