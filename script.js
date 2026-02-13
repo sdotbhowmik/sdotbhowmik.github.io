@@ -219,19 +219,3 @@ tabs.forEach(tab =>{
 
     })
 })
-
-
-// Show contact form status (success/error)
-window.addEventListener('DOMContentLoaded', function() {
-  const urlParams = new URLSearchParams(window.location.search);
-  const status = urlParams.get('status');
-  const msg = urlParams.get('message');
-
-  if (status === 'success') {
-    alert('✅ Thank you! Your message has been sent.');
-    // Clear form fields
-    document.querySelector('form').reset();
-  } else if (status === 'error' && msg) {
-    alert('❌ Error: ' + decodeURIComponent(msg));
-  }
-});
