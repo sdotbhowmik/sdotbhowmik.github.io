@@ -33,6 +33,21 @@ $(document).ready(function(){
         $('.menu-btn i').toggleClass("active");
     });
 
+    // toggle dropdown on mobile
+    $('.navbar .menu li.dropdown > a').click(function(e){
+        if($(window).width() <= 947){
+            e.preventDefault();
+            $(this).parent().toggleClass("active");
+        }
+    });
+
+    // close dropdown when clicking on a submenu link
+    $('.navbar .menu li.dropdown .dropdown-content a').click(function(){
+        if($(window).width() <= 947){
+            $('.navbar .menu li.dropdown').removeClass("active");
+        }
+    });
+
     // typing text animation script
     var typed = new Typed(".typing", {
         strings: ["Web Automation", "Mobile Automation", "API Verification","Performance Testing", "Database Testing"],
@@ -204,3 +219,19 @@ tabs.forEach(tab =>{
 
     })
 })
+
+
+// Show contact form status (success/error)
+window.addEventListener('DOMContentLoaded', function() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const status = urlParams.get('status');
+  const msg = urlParams.get('message');
+
+  if (status === 'success') {
+    alert('✅ Thank you! Your message has been sent.');
+    // Clear form fields
+    document.querySelector('form').reset();
+  } else if (status === 'error' && msg) {
+    alert('❌ Error: ' + decodeURIComponent(msg));
+  }
+});
