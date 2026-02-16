@@ -467,40 +467,28 @@ section .title::after{
 }
 
 /* Horizontal achievements row: show two cards per view on wide screens */
-.achv-row-wrapper{ position: relative; }
-.achv-row{
-    display:flex;
-    gap:18px;
-    align-items:stretch;
-    flex-wrap:nowrap !important;
-    overflow-x:auto;
-    scroll-behavior:smooth;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom:6px;
-    scroll-snap-type: x mandatory;
-    justify-content:flex-start;
+.achv-grid-wrapper{ position: relative; }
+.achv-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0;
 }
-.achv-row::-webkit-scrollbar{ height:10px }
-.achv-row::-webkit-scrollbar-thumb{ background:#d0d7de; border-radius:8px }
 .achv-card{
     background:#fff;
     color:#222;
     border-radius:10px;
     padding:18px;
     box-shadow:0 8px 20px rgba(0,0,0,0.06);
-    /* show exactly two cards per view */
-    flex:0 0 calc(50% - 9px);
-    min-width:420px;
-    max-width:620px;
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
     justify-content:space-between;
-    scroll-snap-align: center;
+    align-items:flex-start;
 }
-.achv-card-inner{ display:flex; gap:14px; align-items:center }
-.achv-left{ flex:1 }
-.achv-right{ width:40%; display:flex; align-items:center; justify-content:center }
-.achv-right img{ width:100%; height:auto; max-height:220px; object-fit:contain; border-radius:6px; border:1px solid #eef3f8 }
+.achv-card-inner{ display:flex; gap:14px; align-items:stretch; }
+.achv-left{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+.achv-right{ width:45%; min-width:200px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.achv-right img{ width:100%; height:auto; max-height:280px; object-fit:contain; border-radius:6px; border:1px solid #eef3f8 }
 .achv-header{ display:flex; align-items:center; gap:12px }
 .achv-icon i{ font-size:24px; color:teal }
 .achv-header h3{ font-size:18px; margin:0; font-weight:700; color:#111 }
@@ -510,58 +498,19 @@ section .title::after{
 .achv-view-btn{ margin-top:10px; background:teal; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer }
 
 @media (max-width:1000px){
-    .achv-card{ flex:0 0 70%; max-width:70%; }
-    .achv-right{ width:38% }
-}
-@media (max-width:640px){
-    .achv-card{ flex:0 0 92%; max-width:92%; }
-    .achv-card-inner{ flex-direction:column }
-    .achv-right{ width:100% }
-}
-
-/* Nav buttons for horizontal scroller */
-.achv-nav{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); color:#fff; border:none; width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; z-index:20 }
-.achv-prev{ left:-20px }
-.achv-next{ right:-20px }
-.achv-nav:hover{ background:rgba(0,0,0,0.8) }
-
-/* Achievements grid layout (3 columns) */
-.achv-grid{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-    align-items: start;
-}
-.achv-card{
-    background: #fff;
-    color: #222;
-    border-radius: 10px;
-    padding: 18px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-}
-.achv-card-inner{ display:flex; gap:14px; align-items:center }
-.achv-left{ flex:1 }
-.achv-right{ width: 36%; display:flex; align-items:center; justify-content:center }
-.achv-right img{ width:100%; height:auto; max-height:220px; object-fit:contain; border-radius:6px; border:1px solid #eef3f8 }
-.achv-header{ display:flex; align-items:center; gap:12px }
-.achv-icon i{ font-size:24px; color:teal }
-.achv-header h3{ font-size:18px; margin:0; font-weight:700; color:#111 }
-.achv-details{ margin-top:10px }
-.detail-label{ font-weight:700; color:#333; display:inline-block; width:90px }
-.detail-value{ color:#555 }
-.achv-view-btn{ margin-top:10px; background:teal; color:#fff; border:none; padding:8px 12px; border-radius:6px; cursor:pointer }
-
-/* Ensure section title is visible */
-.achievements .title{ color:#111 }
-
-@media (max-width:1000px){
-    .achv-grid{ grid-template-columns: repeat(2, 1fr); }
-    .achv-right{ width:40% }
+    .achv-grid{ grid-template-columns: 1fr; }
 }
 @media (max-width:640px){
     .achv-grid{ grid-template-columns: 1fr; }
     .achv-card-inner{ flex-direction:column }
     .achv-right{ width:100% }
+}
+
+/* Ensure section title is visible */
+.achievements .title{ color:#111 }
+
+@media (max-width:1000px){
+    .achv-grid{ grid-template-columns: 1fr; }
 }
 
 /* Achievements carousel and cards */
@@ -688,10 +637,10 @@ section .title::after{
 .achievements .detail-label{
     font-weight: 600;
     margin-right: 8px;
-    color: #b3b300;
+    color: black;
 }
 .achievements .detail-value{
-    color: #ddd;
+    color: black;
     flex-wrap: wrap;
 }
 
@@ -973,10 +922,10 @@ section .title::after{
 
 /* Make individual card titles readable */
 .achv-header h3,
-.achievements .achv-content .achv-card h3{ color: #fff !important; }
+.achievements .achv-content .achv-card h3{ color: black !important; }
 
 /* Prevent cards from overlapping and clip overflow */
-.achv-card{ position: relative !important; z-index: 1 !important; overflow: hidden !important; }
+.achv-card{ position: relative !important; z-index: 1 !important; }
 .achv-card:hover{ z-index: 5 !important; }
 
 /* Ensure horizontal row never wraps and hide its scrollbar */
