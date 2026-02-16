@@ -101,51 +101,8 @@ $(document).ready(function(){
         $('#achvModal').fadeIn(180);
     });
 
-    // Horizontal scroller autoplay + swipe + nav
-    (function(){
-        var $row = $('.achv-row');
-        if(!$row.length) return;
-
-        var autoTimer = null;
-        var autoDelay = 3000; // ms between auto scrolls
-        var animDuration = 600; // animation duration when moving
-
-        function scrollNext(){
-            var el = $row[0];
-            var cardWidth = el.querySelector('.achv-card')?.offsetWidth || Math.round(el.clientWidth/2);
-            var target = el.scrollLeft + cardWidth + 18; // include gap
-            var max = el.scrollWidth - el.clientWidth;
-            if(target > max) target = 0; // loop
-            $row.animate({scrollLeft: target}, animDuration);
-        }
-        function scrollPrev(){
-            var el = $row[0];
-            var cardWidth = el.querySelector('.achv-card')?.offsetWidth || Math.round(el.clientWidth/2);
-            var target = el.scrollLeft - (cardWidth + 18);
-            if(target < 0) target = Math.max(0, el.scrollWidth - el.clientWidth);
-            $row.animate({scrollLeft: target}, animDuration);
-        }
-
-        function startAuto(){ stopAuto(); autoTimer = setInterval(scrollNext, autoDelay); }
-        function stopAuto(){ if(autoTimer){ clearInterval(autoTimer); autoTimer = null; } }
-
-        // start
-        startAuto();
-
-        // pause on hover/focus
-        $row.on('mouseenter focusin', stopAuto);
-        $row.on('mouseleave focusout', startAuto);
-
-        // nav buttons
-        $('.achv-prev').on('click', function(){ stopAuto(); scrollPrev(); startAuto(); });
-        $('.achv-next').on('click', function(){ stopAuto(); scrollNext(); startAuto(); });
-
-        // basic touch swipe
-        var touchStartX = 0, touchStartScroll = 0, isTouching=false;
-        $row.on('touchstart', function(e){ stopAuto(); isTouching=true; touchStartX = e.originalEvent.touches[0].clientX; touchStartScroll = this.scrollLeft; });
-        $row.on('touchmove', function(e){ if(!isTouching) return; var x = e.originalEvent.touches[0].clientX; var dx = touchStartX - x; this.scrollLeft = touchStartScroll + dx; });
-        $row.on('touchend touchcancel', function(e){ isTouching=false; startAuto(); });
-    })();
+    // Horizontal scroller disabled - achievements now use grid layout
+    // (Previous carousel code removed)
 
     // Handle previous button click
     $('.carousel-btn-prev').click(function(){
