@@ -15,7 +15,7 @@
     	      action="php/login.php" 
     	      method="post">
 
-    		<h4 class="display-4  fs-1">LOGIN</h4><br>
+    		<h4 class="display-4  fs-1"><img src="img/logo.png" alt="Logo" style="height: 48px;"> | LOGIN</h4><br>
     		<?php if(isset($_GET['error'])){ ?>
     		<div class="alert alert-danger" role="alert">
 			  <?php echo htmlspecialchars($_GET['error']); ?>

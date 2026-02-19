@@ -159,5 +159,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 		  });
    </script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+	<footer class="navbar navbar-expand-lg bg-body-tertiary justify-content-center py-3">
+		<span>Designed and developed By <a href="https://www.facebook.com/sdotbhowmik" target="_blank">Subrata K. Bhowmik</a> | <span class="fa fa-copyright"></span> 2026 All rights reserved. </span>
+	</footer>
 </body>
 </html>

@@ -14,8 +14,8 @@
     	      action="admin/admin-login.php" 
     	      method="post">
 
-    		<h4 class="display-4  fs-1">ADMIN LOGIN</h4><br>
-    		<p>Only for Administrator</p>
+    		<h4 class="display-4  fs-1"><img src="img/logo.png" alt="Logo" style="height: 48px;"> | ADMIN LOGIN</h4><br>
+    		<p style="color: red;">Only for Administrator</p>
     		<?php if(isset($_GET['error'])){ ?>
     		<div class="alert alert-danger" role="alert">
 			  <?php echo htmlspecialchars($_GET['error']); ?>

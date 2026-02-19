@@ -14,7 +14,7 @@
     	      action="php/signup.php" 
     	      method="post">
 
-    		<h4 class="display-4  fs-1">Create Account</h4><br>
+    		<h4 class="display-4  fs-1"><img src="img/logo.png" alt="Logo" style="height: 48px;"> | Sign-Up</h4><br>
     		<?php if(isset($_GET['error'])){ ?>
     		<div class="alert alert-danger" role="alert">
 			  <?php echo htmlspecialchars($_GET['error']); ?>
