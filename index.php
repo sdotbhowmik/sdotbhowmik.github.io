@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<!-- Created By Subrata Kumar Bhowmik -->
+<?php
+include_once("blog/db_conn.php");
+include_once("blog/admin/data/Post.php");
+$latest_posts = getAll($conn);
+if ($latest_posts != 0 && count($latest_posts) > 3) {
+    $latest_posts = array_slice($latest_posts, 0, 3);
+}
+?>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subrata Kumar Bhowmik's Portfolio</title>
+    <!-- Unicons-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/images/favicon_io/site.webmanifest">	
+  </head>
+  <body>
+    <div class="scroll-up-btn">
+      <i class="fa fa-angle-up"></i>
+    </div>
+    <nav class="navbar">
+      <div class="max-width">
+        <div class="logo">
+          <a href="#">
+            <img src="images/logo/Logo_Final_Black.png" alt="Logo" />
+          </a>
+        </div>
+        <ul class="menu">
+          <li>
+            <a href="#home" class="menu-btn">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="menu-btn">About</a>
+          </li>
+          <li>
+            <a href="#services" class="menu-btn">Services</a>
+          </li>
+          <li>
+            <a href="#skills" class="menu-btn">Skills</a>
+          </li>
+          <li>
+            <a href="#projects" class="menu-btn">Projects</a>
+          </li>
+          <li>
+            <a href="#contact" class="menu-btn">Contact</a>
+          </li>
+          <li class="dropdown">
+            <a href="#" class="menu-btn">More  <span style="color: teal;">▼</span></a>
+            <div class="dropdown-content">
+              
+              <div class="dropdown-section">
+                <p class="section-title">Essentials</p>
+                <a href="/blog/blog.php" target="_blank">Blogs</a>
+                <a href="https://hostinger.titan.email/mail/" target="_blank">Webmail</a>
+                <a href="https://fintech.subrata.tech/" target="_blank">Fintech</a>
+              </div>
+
+              <div class="dropdown-section">
+                <p class="section-title">Tools</p>
+                <a href="https://mindmap.subrata.tech/" target="_blank">Mindmaps</a>
+                <a href="https://qr.subrata.tech/" target="_blank">QR Scanner</a>
+                <a href="https://mediaplayer.subrata.tech/" target="_blank">Media Player</a>
+                <a href="https://teleprompter.subrata.tech/" target="_blank">Telepormpter</a>
+                <a href="https://subrata.tech/media" target="_blank">E-Drive</a>
+              </div>
+              <div class="dropdown-section">
+                <p class="section-title">Demo</p>
+                <a href="demo/agency/index.html" target="_blank">Agency</a>
+                <a href="demo/gamics/index.html" target="_blank">Gamics</a>
+                <a href="demo/multipurpose/index.html" target="_blank">Multipurpose</a>
+                <a href="demo/portfolio/index.html" target="_blank">Portfolio</a>
+                <a href="demo/su-work/login.html" target="_blank">su-work</a>
+                <a href="https://lms.subrata.tech/" target="_blank">LMS</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="menu-btn">
+          <i class="fa fa-bars"></i>
+        </div>
+      </div>
+    </nav>
+    <!-- home section start -->
+    <section class="home" id="home">
+      <div class="max-width">
+        <div style="order: 1;">
+          <div class="home-content">
+            <div class="text-1">Hello, my name is</div>
+            <div class="text-2">Subrata K. Bhowmik</div>
+            <div class="text-3">I'm skilled in <span class="typing"></span>
+            </div>
+            <div class="text-4">Any Project in Mind?</div>
+            <a href="tel:+8801818224947">Call Me</a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="sns">
+              <a href="https://www.facebook.com/sdotbhowmik" target="_blank" class="fa fa-facebook-square"></a>
+              <a href="#" target="_blank" class="fa fa-twitter"></a>
+              <a href="#" target="_blank" class="fa fa-linkedin"></a>
+              <a href="https://github.com/sdotbhowmik" target="_blank" class="fa fa-github"></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Header SNS Section removed - now inside home-content -->
+      </div>
+    </section>
+    <!-- about section start -->
+    <section class="about" id="about">
+      <div class="max-width">
+        <h2 class="title">About me</h2>
+        <div class="about-content">
+          <div class="column left">
+            <img src="images/profile-1.jpeg" alt="">
+          </div>
+          <div class="column right">
+            <div class="text">I'm Subrata and I've knowledge on <br>
+              <span class="typing-2"></span>
+            </div>
+            <p>Hello, I am a professional Software Test Lead with more than decade of experience in manual as well as automated testing. I am ISTQB certified professional focusing on backend API, database, UI and performance testing of web and mobile applications. I am proficient in Python, Selenium, and Appium which enable me to deliver robust and dependable software products.</p>
+            </br>
+            <p>Currently employed to leading technology company that dominates the mobile phone industry. I am responsible on automation, test management and process optimization. I have experience in Blackbox Testing, Web Automation, API/WebService Automation, Testing Tool Configuration, Test Process Setup as per industry best practices. </p>
+            </br>
+            
+            <p>A strong team player, I’ve been recognized for my ability to collaborate effectively with both local and offshore teams. Passionate about workflow optimization, I strive to create efficient, productive, and high-performing work environments. </p>
+            </br>
+            </br>
+            <div class="about__info">              
+                <div>
+                  <span class="about__info-title" style="color: teal; font-size: 2rem; font-weight: bold;">15+</span>
+                  <span class="about__info-name">Experience <br> Years</span>
+                </div>
+                <div style="margin-center:25%" >
+                  <span class="about__info-title" style="color: teal; font-size: 2rem; font-weight: bold;">50+</span>
+                  <span class="about__info-name">Project<br>Worked</span>
+                </div>
+              
+                <div style="margin-right:25%" >
+                  <span class="about__info-title" style="color: teal; font-size: 2rem; font-weight: bold;">95%</span>
+                  <span class="about__info-name">Automation<br>Coverage</span>
+                </div>               
+              <!-- blocked
+                <div style="margin-right:25%" >
+                  <span class="about__info-title" style="color: teal; font-size: 2rem; font-weight: bold;">5+</span>
+                  <span class="about__info-name">Samsung<br>Awards</span>
+                </div>                               
+              
+                <div style="margin-right:25%" >
+                  <span class="about__info-title" style="color: teal; font-size: 2rem; font-weight: bold;">2</span>
+                  <span class="about__info-name">Certification<br>Counts</span>
+                </div>
+              -->
+            </div>
+              <a href="pdf/CV_SubrataKumarBhowmik.pdf" target="_blank" class="button button--flex"> Download CV <i class="fa fa-download"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="achievements" id="achievements">
+  <div class="max-width">
+    <h2 class="title">Achievements</h2>
+    <div class="achv-grid-wrapper">
+      <div class="achv-grid">
+
+      <!-- Achievement 1 -->
+      <div class="achv-card" data-img="images/cert-placeholder.svg" data-contribution="Recognized for exceptional cross‑team collaboration and project quality leadership.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-trophy"></i></div>
+              <h3>OUTSTANDING PROJECT COLLABORATORS</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SAMSUNG RESEARCH BANGLADESH</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Mar 2022</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/cert-placeholder.svg" alt="certificate placeholder">
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement 2 -->
+      <div class="achv-card" data-img="images/cert-placeholder.svg" data-contribution="Honored for outstanding individual performance and sprint delivery excellence.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-star"></i></div>
+              <h3>ICON OF THE MONTH</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SAMSUNG RESEARCH BANGLADESH</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Feb 2021</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/cert-placeholder.svg" alt="certificate placeholder">
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement 3 -->
+      <div class="achv-card" data-img="images/cert-placeholder.svg" data-contribution="Recognized as an Iconic Team member for 2nd half contribution.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-users"></i></div>
+              <h3>ICONIC TEAM</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SAMSUNG RESEARCH BANGLADESH</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Feb 2016</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/cert-placeholder.svg" alt="certificate placeholder">
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement 4 -->
+      <div class="achv-card" data-img="images/cert-placeholder.svg" data-contribution="Awarded for significant contributions to test automation framework development">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-star"></i></div>
+              <h3>ICON OF THE MONTH</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SAMSUNG RESEARCH BANGLADESH</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Jul 2012</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/cert-placeholder.svg" alt="certificate placeholder">
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement 5 -->
+      <div class="achv-card" data-img="images/cert-placeholder.svg" data-contribution="Awarded for significant contributions to test automation framework development">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-trophy"></i></div>
+              <h3>Best Contributor</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SAMSUNG RESEARCH BANGLADESH</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">JAN 2024</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/cert-placeholder.svg" alt="certificate placeholder">
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievement 6 -->
+      <div class="achv-card" data-img="images/certificates/CODECHEF_ML_CERTIFICATE.png" data-contribution="It demonstrates not just your interest, but your dedication to mastering complex technical concepts by completing all the required lessons and projects. This achievement, secured on February 15, 2026,">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-code"></i></div>
+              <h3>Certifcate of Completion</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">CODECHEF</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">FEB 2026</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/certificates/CODECHEF_ML_CERTIFICATE.png" alt="certificate placeholder">
+          </div>
+        </div>
+      </div>
+
+      </div> <!-- /.achv-grid -->
+    </div> <!-- /.achv-grid-wrapper -->
+  </div> <!-- /.max-width -->
+</section>
+
+<!-- Achievement Details Modal -->
+<div id="achvModal" class="modal" style="display:none">
+  <div class="modal-content">
+    <span class="modal-close">&times;</span>
+    <h3 class="modal-title">Details</h3>
+    <div class="modal-body"></div>
+  </div>
+</div>
+
+<!-- Certifications Separator -->
+<div class="cert-separator"></div>
+
+<!-- certifications section start -->
+<section class="certifications" id="certifications">
+  <div class="max-width">
+    <h2 class="title">My Certifications</h2>
+    <div class="cert-content">
+      
+      <!-- Certification 1 -->
+      <div class="cert-card">
+        <div class="cert-logo">
+          <img src="https://astqb.org/wp-content/uploads/2020/06/ISTQB-logo-300x211.jpg" alt="ISTQB Logo">
+        </div>
+        <h3>ISTQB CTFL (Certified Tester Foundation Level)</h3>
+        <div class="cert-details">
+          <div class="cert-item">
+            <span class="cert-label">Status:</span>
+            <span class="cert-status achieved">Achieved</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-label">Year:</span>
+            <span class="cert-value">2024</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certification 2 -->
+      <div class="cert-card">
+        <div class="cert-logo">
+          <img src="https://astqb.org/wp-content/uploads/2020/06/ISTQB-logo-300x211.jpg" alt="ISTQB Logo">
+        </div>
+        <h3>ISTQB CTAL-TM (Certified Tester Advanced Level - Test Manager)</h3>
+        <div class="cert-details">
+          <div class="cert-item">
+            <span class="cert-label">Status:</span>
+            <span class="cert-status in-progress">In-Progress</span>
+          </div>
+          <div class="cert-item">
+            <span class="cert-label">Year:</span>
+            <span class="cert-value">2026</span>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- /.cert-content -->
+  </div> <!-- /.max-width -->
+</section>
+
+    
+ <!-- services section start -->
+<section class="services" id="services">
+  <div class="max-width">
+    <h2 class="title">My Expertise</h2>
+    <!-- First Row of Cards -->
+    <div class="serv-content">
+      <!-- Functional Testing Card -->
+      <div class="card">
+        <div class="box">
+          <i class="fa fa-cogs"></i>
+          <div class="text">Functional Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Validate requirements against test cases and acceptance criteria.</li>
+              <li>Triage defects, prioritize fixes, and track to resolution.</li>
+              <li>Ensure end-to-end coverage of user workflows and edge cases.</li>
+              <li>Report critical metrics (pass/fail rates, defect density) to stakeholders.</li>
+              <li>Maintain compliance with testing standards (e.g., ISO 29119).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Performance Testing Card -->
+      <div class="card">
+        <div class="box">
+          <i class="fa fa-tachometer"></i>
+          <div class="text">Performance Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Define non-functional requirements (response times, scalability).</li>
+              <li>Design load models (peak/stress/endurance) and test environments.</li>
+              <li>Identify bottlenecks (CPU, DB, memory) and drive optimizations.</li>
+              <li>Automate scenarios using tools like JMeter or LoadRunner.</li>
+              <li>Recommend infrastructure upgrades based on capacity limits.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- API Testing Card -->
+      <div class="card">
+        <div class="box">
+          <i class="fa fa-plug"></i>
+          <div class="text">API Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Verify API contracts (OpenAPI/Swagger) for consistency.</li>
+              <li>Automate tests (Postman/RestAssured) with CI/CD integration.</li>
+              <li>Validate security (auth, encryption, OWASP API Top 10).</li>
+              <li>Ensure data integrity in payloads and error handling.</li>
+              <li>Benchmark performance (latency, throughput, error rates).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Divider Line -->
+    <div class="bars">
+      <div class="info"></div>
+      <div class="line html">
+        <br>
+        <hr>
+        <br>
+      </div>
+    </div>
+    <!-- Second Row of Cards -->
+    <div class="serv-content">
+      <!-- UX Testing Card -->
+      <div class="card">
+        <div class="box">
+          <i class="fa fa-user"></i>
+          <div class="text">UX Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Apply usability heuristics (Nielsen) and accessibility (WCAG).</li>
+              <li>Measure task success rates and user satisfaction (SUS).</li>
+              <li>Collaborate with designers to fix pain points.</li>
+              <li>Test responsiveness across devices/viewports.</li>
+              <li>Facilitate A/B tests for feature optimization.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile Testing Card -->
+      <div class="card">
+        <div class="box">
+          <i class="fa fa-android"></i>
+          <div class="text">Mobile Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Cover devices/platforms (iOS/Android versions, screen sizes).</li>
+              <li>Test real-world conditions (network, interruptions, offline).</li>
+              <li>Ensure app store compliance (Google Play/Apple guidelines).</li>
+              <li>Monitor resource usage (battery, memory, launch time).</li>
+              <li>Assess security risks (data leaks, root detection).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Game Testing Card -->
+      <div class="card">
+        <div class="box">
+          <i class="fa fa-gamepad"></i>
+          <div class="text">Game Testing</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Evaluate playability (mechanics, difficulty, fun factor).</li>
+              <li>Verify immersion (audio-visual sync, physics, story flow).</li>
+              <li>Stress-test multiplayer (matchmaking, sync, lobbies).</li>
+              <li>Prevent exploits (cheats, progression skips, duping).</li>
+              <li>Validate localization (translations, cultural compliance).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Details Modal -->
+  <div id="serviceModal" class="modal" style="display:none">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <h3 class="modal-title"></h3>
+      <div class="modal-body"></div>
+    </div>
+  </div>
+
+</section>
+<!-- services section end -->
+
+
+
+    <!-- skills section start --><section class="skills section" id="skills"><div class="max-width">
+        <h2 class="title">My skills</h2>
+        <div class="skills-content">
+          <div class="column left">
+            <div class="skills__container container grid">
+              <div>
+                <!--Skills 1-->
+                <div class="skills__content skills__open">
+                  <div class="skills__header">
+                    <i class="uil uil-brackets-curly skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">Languages</h1>
+                      <span class="skills__subtitle">More than 2 years</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">C</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">C++</h3>
+                        <span class="skills__number">60%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__60"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Python</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Skills 2-->
+                <div class="skills__content skills__close">
+                  <div class="skills__header">
+                    <i class="uil uil-server-network skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">Backend Testing</h1>
+                      <span class="skills__subtitle">More than 3 years</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">API Testing</h3>
+                        <span class="skills__number">90%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__90"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Database Testing</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Skills 3-->
+                <div class="skills__content skills__close">
+                  <div class="skills__header">
+                    <i class="uil uil-android skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">Frontend Testing</h1>
+                      <span class="skills__subtitle">More than 4 years</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Web</h3>
+                        <span class="skills__number">100%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__100"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Mobile</h3>
+                        <span class="skills__number">80%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__80"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Skills 4-->
+                <div class="skills__content skills__close">
+                  <div class="skills__header">
+                    <i class="uil uil-cloud skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">Performance Testing</h1>
+                      <span class="skills__subtitle">More than 2 years</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Jmeter</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Locust</h3>
+                        <span class="skills__number">80%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__80"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Skills 5-->
+                <div class="skills__content skills__close">
+                  <div class="skills__header">
+                    <i class="uil uil-database skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">Security Testing</h1>
+                      <span class="skills__subtitle">Around 3 months</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Zed Attack Proxy (ZAP)</h3>
+                        <span class="skills__number">50%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__50"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Fiddler</h3>
+                        <span class="skills__number">50%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__50"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Skills 6-->
+                <div class="skills__content skills__close">
+                  <div class="skills__header">
+                    <i class="uil uil-book skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">Miscellaneous</h1>
+                      <span class="skills__subtitle">OVer the period</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">GIT</h3>
+                        <span class="skills__number">90%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__90"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Docker</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Excel</h3>
+                        <span class="skills__number">80%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__80"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Power point</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="qualification section  column right" id="works">
+            <div class="qualification__container container">
+              <div class="qualification__tabs">
+                <div class="qualification__button button--flex qualification__active" data-target='#education'>
+                  <i class="uil uil-graduation-cap qualification__icon"></i> Education
+                </div>
+                <div class="qualification__button button--flex" data-target='#work'>
+                  <i class="uil uil-briefcase-alt qualification__icon"></i> Work
+                </div>
+              </div>
+              <div class="qualification__sections">
+                <!--Qualification content 1-->
+                <div class="qualification__content qualification__active" data-content id="education">
+                  <!--Qualification  1-->
+                  <div class="qualification__data">
+                    <div>
+                      <h3 class="qualification__title">Bechelor in Engineering (CSE)</h3>
+                      <span class="qualification__subtitle">World University of Bangladesh <br> CGPA: Dropout </span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2013 - 2017
+                      </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                  </div>
+                  <!--Qualification  2-->
+                  <div class="qualification__data">
+                    <div></div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                      <h3 class="qualification__title">Diploma In Computer Engineering</h3>
+                      <span class="qualification__subtitle">Cumilla Ploytechnic Institute <br>GPA: 3.30 </span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2005 - 2009
+                      </div>
+                    </div>
+                  </div>
+                  <!--Qualification  3-->
+                  <div class="qualification__data">
+                    <div>
+                      <h3 class="qualification__title">Secondary School Certificate</h3>
+                      <span class="qualification__subtitle">Yusuf M.T. High School,Cumilla <br>GPA: 4.38 </span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2000 - 2005
+                      </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <!--<span class="qualification__line"></span>-->
+                    </div>
+                  </div>
+                </div>
+                <!--Qualification content 2-->
+                <div class="qualification__content" data-content id="work">
+                  <!--Qualification  1-->
+                  <div class="qualification__data">
+                    <div>
+                      <h3 class="qualification__title">Cheif Engineer</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2022 - 202_
+                      </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                  </div>
+                  <!--Qualification  2-->
+                  <div class="qualification__data">
+                    <div></div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                      <h3 class="qualification__title">Technical Lead</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2020 - 2022
+                      </div>
+                    </div>
+                  </div>
+                  <!--Qualification  3-->
+                  <div class="qualification__data">
+                    <div>
+                      <h3 class="qualification__title">Lead Engineer</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2019 - 2020
+                      </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                  </div>
+                  <!--Qualification  4-->
+                  <div class="qualification__data">
+                    <div></div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                      <h3 class="qualification__title">Sr. Software Engineer</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2017 - 2019
+                      </div>
+                    </div>
+                  </div>
+                  <!--Qualification  5-->
+                  <div class="qualification__data">
+                    <div>
+                      <h3 class="qualification__title">Software Engineer</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2015 - 2017
+                      </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                  </div>
+                  <!--Qualification  6-->
+                  <div class="qualification__data">
+                    <div></div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                      <h3 class="qualification__title">Junior Engineer</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2013 - 2015
+                      </div>
+                    </div>
+                  </div>
+                  <!--Qualification  7-->
+                  <div class="qualification__data">
+                    <div>
+                      <h3 class="qualification__title">Associate Engineer</h3>
+                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2011 - 2013
+                      </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                  </div>
+                  <!--Qualification  8-->
+                  <div class="qualification__data">
+                    <div></div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
+                    </div>
+                    <div>
+                      <h3 class="qualification__title">IT Officer</h3>
+                      <span class="qualification__subtitle">Ocean Group Ltd.</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2010 - 2011
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- projects section start -->
+<section class="projects" id="projects">
+  <div class="max-width">
+    <h2 class="title">My Projects</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+        
+        <!-- Project 1 -->
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img src="projects/Selenium_Framework.png" alt="Selenium Python">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Selenium Python Automation</h3>
+              <p class="project-description">A comprehensive web automation framework built with Selenium and Python, designed for testing web applications with advanced locator strategies and page object patterns.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python 3.x</li>
+                  <li>Selenium WebDriver</li>
+                  <li>pytest</li>
+                  <li>Page Object Model</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img src="projects/Appium_Framework.png" alt="Appium Python">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Appium Mobile Automation</h3>
+              <p class="project-description">Mobile test automation framework using Appium and Python for testing iOS and Android applications with cross-platform capabilities and native app support.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Appium Server</li>
+                  <li>Python</li>
+                  <li>XCUITest (iOS)</li>
+                  <li>UiAutomator (Android)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/Appium-PythonDemo.git" class="btn-demo" target="_blank"><i class="fa fa-link"></i> View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 (Playwright Python) -->
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img src="projects/Playwright_Framework.png" alt="Playwright Python">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Playwright Python Automation</h3>
+              <p class="project-description">End-to-end testing framework built with Playwright and Python, providing capabilities to automate browser interactions for web applications with modern browser testing support.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python 3.x</li>
+                  <li>Playwright</li>
+                  <li>pytest</li>
+                  <li>Headless Browsers</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 (Performance Testing using jMeter) -->
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img src="projects/Performence_Testing.png" alt="Performance Testing using jMeter">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Performance Testing using jMeter</h3>
+              <p class="project-description">A performance testing framework using Apache jMeter to simulate real-world user load and test the performance of web applications under varying levels of traffic.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Apache jMeter</li>
+                  <li>Load Testing</li>
+                  <li>Performance Metrics</li>
+                  <li>Distributed Testing</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Existing Project 5 -->
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img src="projects/RobotFramework.png" alt="Robot Framework">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Robot Framework With Python</h3>
+              <p class="project-description">Keyword-driven test automation framework using Robot Framework for IJI testing with built-in libraries and easy-to-read test cases in plain English syntax.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Robot Framework</li>
+                  <li>Selenium Libraary</li>
+                  <li>Appium Libraary</li>
+                  <li>Requests Libraary</li>
+                  <li>Data-Driven Testing</li>                  
+                  <li>Robust Reporting Moduel</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+    <!-- contact section start -->
+    <section class="contact" id="contact">
+      <div class="max-width">
+        <h2 class="title">Contact me</h2>
+        <div class="contact-content">
+          <div class="column left">
+            <div class="text">Get in Touch</div>
+            <p>Anything else in mind? Just drop me a line and ask for anything with which you think i could be helpful. I am looking forward to hearing from you.</p>
+            <div class="icons">
+              <div class="row">
+                <i class="fa fa-user"></i>
+                <div class="info">
+                  <div class="head">Name</div>
+                  <div class="sub-title">Subrata K. Bhowmik</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fa fa-map-marker"></i>
+                <div class="info">
+                  <div class="head">Address</div>
+                  <div class="sub-title">Majar Road, Lalkuthi Bazar, Dhaka, Bangladesh</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fa fa-envelope"></i>
+                <div class="info">
+                  <div class="head">Email</div>
+                  <div class="sub-title">sdotbhowmik@gmail.com</div>
+                </div>
+              </div>
+              <div class="row">
+                <i class="fa fa-mobile"></i>
+                <div class="info">
+                  <div class="head">Mobile</div>
+                  <div class="sub-title">+88 01818 224947</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column right">
+            <div class="text">Message me</div>
+            <form action="#">
+              <div class="fields">
+                <div class="field name">
+                  <input type="text" placeholder="Name" required>
+                </div>
+                <div class="field email">
+                  <input type="email" placeholder="Email" required>
+                </div>
+              </div>
+              <div class="field">
+                <input type="text" placeholder="Project" required>
+              </div>
+              <div class="field textarea">
+                <textarea cols="30" rows="10" placeholder="Descriptions.." required></textarea>
+              </div>
+              <div class="button">
+                <button type="submit">Send message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- footer section start -->
+    <footer>
+      <span>Designed and developed By <a href="https:www.facebook.com/sdotbhowmik" target="_blank">Subrata K. Bhowmik</a> | <span class="fa fa-copyright"></span> 2026 All rights reserved. </span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
