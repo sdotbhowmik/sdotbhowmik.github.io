@@ -77,11 +77,20 @@ section .title::after{
     transform: translateX(-50%);
 }
 .sns .fa {
-  font-size: 35px;
+  font-size: 22px;
   text-align: center;
   text-decoration: none;
-  margin: 20px 20px;
   color: teal;
+  transition: all 0.3s ease;
+}
+
+.sns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  z-index: 10;
 }
 
 .fa:hover {
@@ -249,15 +258,17 @@ section .title::after{
 .home{
     display: flex;
     background: url("images/banner.jpg") no-repeat center;
-    height: 100vh;
+    min-height: 100vh;
     color: #fff;
-    min-height: 500px;
     background-size: cover;
     background-attachment: fixed;
     font-family: 'Ubuntu', sans-serif;
+    padding-bottom: 50px;
 }
 .home .max-width{
-    margin: auto 0 auto 300px;
+    margin: auto 0 auto 120px;
+    display: flex;
+    flex-direction: column;
 }
 .home .home-content .text-1{
     font-size: 27px;
@@ -294,6 +305,67 @@ section .title::after{
 .home .home-content a:hover{
     color: teal;
     background: none;
+}
+
+/* Latest Posts Mini Cards */
+.home .latest-posts {
+    margin-top: 30px;
+    text-align: center;
+    max-width: 100%;
+    order: 2;
+}
+.home .latest-posts h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+    text-align: left;
+}
+.home .posts-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 15px;
+}
+.home .post-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    width: 280px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+.home .post-card:hover {
+    transform: translateY(-5px);
+}
+.home .post-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.home .post-card h4 {
+    color: #fff;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+.home .post-card p {
+    color: #ddd;
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+.home .post-card a {
+    color: teal;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+.home .post-card a:hover {
+    text-decoration: underline;
 }
 
 /* about section styling */
