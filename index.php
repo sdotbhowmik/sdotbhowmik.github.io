@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <!-- Created By Subrata Kumar Bhowmik -->
-<?php
-include_once("blog/db_conn.php");
-include_once("blog/admin/data/Post.php");
-$latest_posts = getAll($conn);
-if ($latest_posts != 0 && count($latest_posts) > 3) {
-    $latest_posts = array_slice($latest_posts, 0, 3);
-}
-?>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8">
@@ -113,8 +106,7 @@ if ($latest_posts != 0 && count($latest_posts) > 3) {
             <br>
             <div class="sns">
               <a href="https://www.facebook.com/sdotbhowmik" target="_blank" class="fa fa-facebook-square"></a>
-              <a href="#" target="_blank" class="fa fa-twitter"></a>
-              <a href="#" target="_blank" class="fa fa-linkedin"></a>
+              <a href="https://www.linkedin.com/in/sdotbhowmik/" target="_blank" class="fa fa-linkedin"></a>
               <a href="https://github.com/sdotbhowmik" target="_blank" class="fa fa-github"></a>
             </div>
           </div>
@@ -787,7 +779,7 @@ if ($latest_posts != 0 && count($latest_posts) > 3) {
                   <!--Qualification  1-->
                   <div class="qualification__data">
                     <div>
-                      <h3 class="qualification__title">Cheif Engineer</h3>
+                      <h3 class="qualification__title">Chief Engineer</h3>
                       <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
                         <i class="uil uil-calendar-alt"></i> 2022 - 202_
