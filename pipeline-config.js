@@ -20,9 +20,10 @@ window.PIPELINE_CONFIG = {
   ],
   statusMessages: [
     "Designing test plan...",
-    "Automating test suite...",
-    "Executing & verifying...",
-    "Deploying to pipeline...",
-    "Monitoring in production..."
+    "Monitoring and controlling...",
+    "Analysing test requirements...",
+    "Designing test cases...",
+    "Implementing automated tests...",
+    "Completing test cycle..."
   ]
 };
