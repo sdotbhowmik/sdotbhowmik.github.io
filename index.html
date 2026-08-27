@@ -5,6 +5,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
     <title>Subrata Kumar Bhowmik's Portfolio</title>
     <!-- Unicons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -56,27 +61,18 @@
               
               <div class="dropdown-section">
                 <p class="section-title">Essentials</p>
-                <a href="/blog/blog.php" target="_blank">Blogs</a>
-                <a href="https://hostinger.titan.email/mail/" target="_blank">Webmail</a>
-                <a href="https://fintech.subrata.tech/" target="_blank">Fintech</a>
+                <a href="https://hostinger.titan.email/mail/" target="_blank" rel="noopener noreferrer">Webmail</a>
+                <a href="https://fintech.subrata.tech/" target="_blank" rel="noopener noreferrer">Fintech</a>
               </div>
 
               <div class="dropdown-section">
                 <p class="section-title">Tools</p>
-                <a href="https://mindmap.subrata.tech/" target="_blank">Mindmaps</a>
-                <a href="https://qr.subrata.tech/" target="_blank">QR Scanner</a>
-                <a href="https://mediaplayer.subrata.tech/" target="_blank">Media Player</a>
-                <a href="https://teleprompter.subrata.tech/" target="_blank">Telepormpter</a>
-                <a href="https://subrata.tech/media" target="_blank">E-Drive</a>
-              </div>
-              <div class="dropdown-section">
-                <p class="section-title">Demo</p>
-                <a href="demo/agency/index.html" target="_blank">Agency</a>
-                <a href="demo/gamics/index.html" target="_blank">Gamics</a>
-                <a href="demo/multipurpose/index.html" target="_blank">Multipurpose</a>
-                <a href="demo/portfolio/index.html" target="_blank">Portfolio</a>
-                <a href="demo/su-work/login.html" target="_blank">su-work</a>
-                <a href="https://lms.subrata.tech/" target="_blank">LMS</a>
+                <a href="https://mindmap.subrata.tech/" target="_blank" rel="noopener noreferrer">Mindmaps</a>
+                <a href="https://qr.subrata.tech/" target="_blank" rel="noopener noreferrer">QR Scanner</a>
+                <a href="https://mediaplayer.subrata.tech/" target="_blank" rel="noopener noreferrer">Media Player</a>
+                <a href="https://teleprompter.subrata.tech/" target="_blank" rel="noopener noreferrer">Teleprompter</a>
+                <a href="https://subrata.tech/media" target="_blank" rel="noopener noreferrer">E-Drive</a>
+                <a href="https://lms.subrata.tech/" target="_blank" rel="noopener noreferrer">LMS</a>
               </div>
             </div>
           </li>
@@ -88,22 +84,22 @@
     </nav>
     <!-- home section start -->
     <section class="home" id="home">
-      <div class="max-width">
-        <div style="order: 1;">
-          <div class="home-content">
+      <div class="max-width home-grid">
+        <div class="home-left">
+          <div class="home-content hero-stagger">
             <div class="text-1">Hello, my name is</div>
             <div class="text-2">Subrata K. Bhowmik</div>
             <div class="text-3">I'm skilled in <span class="typing"></span>
             </div>
             <div class="text-4">Any Project in Mind?</div>
-            <a href="tel:+8801818224947">Call Me</a>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            <span class="cta-wrap">
+              <a href="tel:+8801818224947" class="cta">Call Me</a>
+            </span>
+			<br>
+			<br>
+			<br>
+			<br>
+			<br>
             <div class="sns">
               <a href="https://www.facebook.com/sdotbhowmik" target="_blank" class="fa fa-facebook-square"></a>
               <a href="https://www.linkedin.com/in/sdotbhowmik/" target="_blank" class="fa fa-linkedin"></a>
@@ -112,11 +108,29 @@
           </div>
         </div>
 
-        <!-- Header SNS Section removed - now inside home-content -->
+        <div class="home-right" data-reveal data-reveal="right">
+          <div class="hero-pipeline" aria-hidden="true"></div>
+        </div>
       </div>
     </section>
     <!-- about section start -->
-    <section class="about" id="about">
+    <section class="about section" id="about">
+      <div class="about-decor" aria-hidden="true" data-reveal-children data-stagger="0.1">
+        <!-- Tech brand logos (devicon CDN) -->
+        <img class="tech-logo m1" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="">
+        <img class="tech-logo m2" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/selenium/selenium-original.svg" alt="">
+        <img class="tech-logo m3" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="">
+        <img class="tech-logo m4" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" alt="">
+        <img class="tech-logo m1" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg" alt="">
+        <img class="tech-logo m2" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="">
+
+        <!-- Sparkles -->
+        <span class="sparkle sparkle-1"></span>
+        <span class="sparkle sparkle-2"></span>
+        <span class="sparkle sparkle-3"></span>
+        <span class="sparkle sparkle-4"></span>
+        <span class="sparkle sparkle-5"></span>
+      </div>
       <div class="max-width">
         <h2 class="title">About me</h2>
         <div class="about-content">
@@ -1107,6 +1121,8 @@
     <footer>
       <span>Designed and developed By <a href="https:www.facebook.com/sdotbhowmik" target="_blank">Subrata K. Bhowmik</a> | <span class="fa fa-copyright"></span> 2026 All rights reserved. </span>
     </footer>
+    <script src="pipeline-config.js" defer></script>
+    <script src="animations.js" defer></script>
     <script src="script.js"></script>
   </body>
 </html>
