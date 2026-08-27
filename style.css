@@ -2295,7 +2295,7 @@ hr {
 
 
 /* ============================================================
-   ABOUT SECTION — PROFESSIONAL TECH-LOGO DECORATIONS
+   ABOUT SECTION
    ============================================================ */
 
 .about.section{
@@ -2311,120 +2311,4 @@ hr {
 .about .max-width{
     position: relative;
     z-index: 1;
-}
-
-.about-decor{
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* --- Tech brand logos (devicon CDN) --- */
-.tech-logo{
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    object-fit: contain;
-    opacity: 0.92;
-    filter:
-        drop-shadow(0 4px 10px rgba(0,0,0,0.10))
-        drop-shadow(0 0 8px rgba(0,128,128,0.25));
-    transition: opacity .3s ease, transform .3s ease, filter .3s ease;
-    cursor: default;
-    pointer-events: auto;
-}
-.tech-logo:hover{
-    opacity: 1;
-    transform: scale(1.18) !important;
-    filter:
-        drop-shadow(0 6px 14px rgba(0,0,0,0.15))
-        drop-shadow(0 0 16px rgba(0,128,128,0.6));
-}
-
-/* Logo positions around the profile image area */
-.tech-logo:nth-of-type(1){ top:  6%;  left:  6%;  }  /* Python  */
-.tech-logo:nth-of-type(2){ top:  4%;  left: 42%;  }  /* Selenium */
-.tech-logo:nth-of-type(3){ top: 48%;  left:  3%;  }  /* Docker   */
-.tech-logo:nth-of-type(4){ top: 36%;  right: 5%;  }  /* Playwright */
-.tech-logo:nth-of-type(5){ bottom: 12%; left: 14%; }  /* Postman  */
-.tech-logo:nth-of-type(6){ bottom: 8%;  right: 14%; }  /* Git      */
-
-/* --- Motion patterns (subtle, professional) --- */
-.tech-logo.m1{ animation: bobFloat 9s ease-in-out infinite; }
-.tech-logo.m2{ animation: driftA   11s ease-in-out infinite; }
-.tech-logo.m3{ animation: driftB   13s ease-in-out infinite; }
-.tech-logo.m4{ animation: bobFloat 8s ease-in-out infinite; animation-delay: -2s; }
-
-@keyframes bobFloat{
-    0%, 100% { transform: translateY(0)    rotate(-4deg); }
-    50%      { transform: translateY(-14px) rotate(4deg); }
-}
-@keyframes driftA{
-    0%, 100% { transform: translate(0, 0); }
-    33%      { transform: translate(8px, -10px); }
-    66%      { transform: translate(-6px, -4px); }
-}
-@keyframes driftB{
-    0%, 100% { transform: translate(0, 0); }
-    33%      { transform: translate(-7px, 8px); }
-    66%      { transform: translate(5px, -10px); }
-}
-
-/* --- Sparkles (small teal dots with pulse) --- */
-.sparkle{
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(0,128,128,0.95);
-    box-shadow: 0 0 12px rgba(0,128,128,0.85);
-    animation: sparkle 2.5s ease-in-out infinite;
-}
-.sparkle-1{ top: 18%; left: 25%; animation-delay:  0s;   }
-.sparkle-2{ top: 30%; right: 22%; animation-delay: -0.8s; }
-.sparkle-3{ top: 65%; left:  6%; animation-delay: -1.4s; }
-.sparkle-4{ top: 78%; right: 28%; animation-delay: -1.9s; }
-.sparkle-5{ top: 12%; right: 40%; animation-delay: -2.3s; }
-
-@keyframes sparkle{
-    0%, 100% { opacity: 0.35; transform: scale(1);   }
-    50%      { opacity: 1;    transform: scale(1.6); }
-}
-
-/* --- Entrance: subtle fade-in when section scrolls into view --- */
-.about-decor > *{
-    opacity: 0;
-    transform: scale(0.6);
-    transition: opacity .7s ease, transform .7s cubic-bezier(0.22, 1, 0.36, 1);
-    transition-delay: var(--i, 0s);
-}
-.about-decor.in-view > *{
-    opacity: 1;
-    transform: scale(1);
-}
-/* Once .in-view is applied, the per-element motion animations take over */
-.about-decor.in-view .tech-logo.m1{ animation: bobFloat 9s ease-in-out infinite; }
-.about-decor.in-view .tech-logo.m2{ animation: driftA   11s ease-in-out infinite; }
-.about-decor.in-view .tech-logo.m3{ animation: driftB   13s ease-in-out infinite; }
-.about-decor.in-view .tech-logo.m4{ animation: bobFloat 8s ease-in-out infinite; animation-delay: -2s; }
-.about-decor.in-view .sparkle{ animation: sparkle 2.5s ease-in-out infinite; }
-.about-decor.in-view .sparkle-1{ animation-delay:  0s;   }
-.about-decor.in-view .sparkle-2{ animation-delay: -0.8s; }
-.about-decor.in-view .sparkle-3{ animation-delay: -1.4s; }
-.about-decor.in-view .sparkle-4{ animation-delay: -1.9s; }
-.about-decor.in-view .sparkle-5{ animation-delay: -2.3s; }
-
-/* --- Responsive --- */
-@media (max-width: 991px){
-    .tech-logo{ width: 44px; height: 44px; }
-}
-@media (max-width: 600px){
-    .about-decor{ display: none; }
-}
-
-/* --- Reduced motion: kill all animations --- */
-@media (prefers-reduced-motion: reduce){
-    .tech-logo,
-    .sparkle{ animation: none !important; transform: none !important; }
 }
