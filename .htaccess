@@ -1,38 +1,29 @@
 # subrata.tech - Apache config for the static portfolio
-# Targets shared-hosting Apache (Hostinger) but works on most Apache 2.4 setups.
-# This file MUST be uploaded to /public_html/.htaccess on Hostinger AND pushed
-# to the GitHub repo so that an Apache host always picks up the same rules.
+# Safe-by-default rules. Anything exotic is commented out so it can't bite us
+# on a shared host like Hostinger.
 
-# =============================================================================
-# 0. KILL SWITCH - override any inherited rules / prevent rogue redirects
-# =============================================================================
-# Many attackers plant a redirect at the top of .htaccess; we make sure our
-# rules always take precedence and actively block any redirect targeting
-# domains we do not control.
-RewriteEngine On
+# ---- Canonical host (www -> non-www) ------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+</IfModule>
 
-# Block any redirect pointing at known-malicious / unrelated destinations
-RewriteCond %{HTTP_HOST} !^(subrata\.tech|www\.subrata\.tech|fintech\.subrata\.tech|mindmap\.subrata\.tech|qr\.subrata\.tech|mediaplayer\.subrata\.tech|teleprompter\.subrata\.tech|lms\.subrata\.tech)$ [NC]
-RewriteRule .* - [F,L]
+# ---- Force HTTPS ---------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} !=on
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+</IfModule>
 
-# =============================================================================
-# 1. HTTPS + canonical host
-# =============================================================================
-RewriteCond %{HTTPS} !=on
-RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+# ---- Directory options ---------------------------------------------------
+Options -Indexes -MultiViews -ExecCGI
 
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-
-# =============================================================================
-# 2. Disable directory listing & MultiViews
-# =============================================================================
-Options -Indexes -MultiViews -ExecCGI -FollowSymLinks -Includes
-
-# =============================================================================
-# 3. Hide sensitive / unwanted files
-# =============================================================================
+# ---- Hide sensitive files ------------------------------------------------
 <FilesMatch "^(\.|.*\.log|.*\.sql|.*\.md|README\.md|package\.json|package-lock\.json|\.env|\.env\..*|\.gitignore)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "^(htaccess|htpasswd)$">
     Require all denied
 </FilesMatch>
 
@@ -42,22 +33,16 @@ Options -Indexes -MultiViews -ExecCGI -FollowSymLinks -Includes
     RewriteRule "(^|/)\.ht" - [F,L]
 </IfModule>
 
-# =============================================================================
-# 4. Block server-side script execution entirely (static site never runs any)
-# =============================================================================
+# ---- Block server-side script execution ----------------------------------
+# Static site never runs any of these
 <FilesMatch "\.(php|php[0-9]?|phtml|phps|pl|cgi|py|asp|aspx|jsp|sh|bash|ksh|csh|tsh|hta)$">
-    Require all denied
-</FilesMatch>
-
-<FilesMatch "^(htaccess|htpasswd)$">
     Require all denied
 </FilesMatch>
 
 RemoveHandler .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pl .py .cgi .asp .aspx .jsp .sh .bash .ksh .csh
 RemoveType    .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pl .py .cgi .asp .aspx .jsp .sh .bash .ksh .csh
 
-# Belt-and-braces: make Apache refuse to interpret any of the above even if a
-# rogue handler is registered.
+# Belt-and-braces: force text/plain on any of the above in case a handler slips through
 <IfModule mod_mime.c>
     AddType text/plain .php .php3 .php4 .php5 .php7 .php8 .phtml .phps
     AddType text/plain .pl .py .cgi
@@ -65,9 +50,7 @@ RemoveType    .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pl .py .cgi .asp 
     AddType text/plain .sh .bash .ksh .csh
 </IfModule>
 
-# =============================================================================
-# 5. Tight MIME types for legitimate assets
-# =============================================================================
+# ---- MIME types for legitimate assets ------------------------------------
 AddType application/javascript .js
 AddType text/css .css
 AddType image/svg+xml .svg
@@ -78,9 +61,7 @@ AddType application/pdf .pdf
 AddType text/html .html .htm
 AddType image/x-icon .ico
 
-# =============================================================================
-# 6. Security headers
-# =============================================================================
+# ---- Security headers ----------------------------------------------------
 <IfModule mod_headers.c>
     Header always set X-Content-Type-Options "nosniff"
     Header always set X-Frame-Options "DENY"
@@ -88,25 +69,21 @@ AddType image/x-icon .ico
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    Header always set Cross-Origin-Opener-Policy "same-origin"
-    Header always set Cross-Origin-Resource-Policy "same-origin"
 
-    # CSP: tight but functional for the libraries actually loaded
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://code.jquery.com; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'"
+    # CSP: allow the CDNs actually used by the page
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://code.jquery.com 'unsafe-inline'; style-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'"
 
     Header unset X-Powered-By
     Header unset Server
     Header unset Via
 </IfModule>
 
-# =============================================================================
-# 7. Cache policy for static assets
-# =============================================================================
+# ---- Cache policy for static assets --------------------------------------
 <IfModule mod_expires.c>
     ExpiresActive On
     ExpiresByType text/html "access plus 1 hour"
-    ExpiresByType text/css "access plus 1 year"
-    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
     ExpiresByType image/png "access plus 1 year"
     ExpiresByType image/jpeg "access plus 1 year"
     ExpiresByType image/svg+xml "access plus 1 year"
@@ -115,31 +92,7 @@ AddType image/x-icon .ico
     ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
 
-# =============================================================================
-# 8. Backup / editor temp files
-# =============================================================================
+# ---- Backup / editor temp files ------------------------------------------
 <FilesMatch "(~|\.swp|\.bak|\.orig|\.tmp|\.save|\.old|\.DS_Store|Thumbs\.db|desktop\.ini)$">
     Require all denied
 </FilesMatch>
-
-# =============================================================================
-# 9. Upload / asset folders - belt-and-braces hardening
-# =============================================================================
-<DirectoryMatch "(?i)uploads?|images">
-    <FilesMatch "\.(php|php[0-9]?|phtml|phps|pl|py|cgi|asp|aspx|jsp|sh|bash)$">
-        Require all denied
-    </FilesMatch>
-    RemoveHandler .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pl .py .cgi .asp .aspx .jsp .sh .bash
-    RemoveType    .php .php3 .php4 .php5 .php7 .php8 .phtml .phps .pl .py .cgi .asp .aspx .jsp .sh .bash
-    SetHandler default
-    php_flag engine off
-</DirectoryMatch>
-
-# =============================================================================
-# 10. Outbound rewrite hardening - if anyone tries to inject a redirect via
-#     html <meta refresh> or JS, the CSP above blocks the inline JS. The rules
-#     below add server-side belt-and-braces against malicious location headers.
-# =============================================================================
-<IfModule mod_headers.c>
-    Header always set Location "%{LOCAL_URL}e" env=clean_location
-</IfModule>
