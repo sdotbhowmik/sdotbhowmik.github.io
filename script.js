@@ -94,7 +94,7 @@ $(document).ready(function(){
         var img = $card.data('img') || $card.find('img').attr('src') || '';
         var contribution = $card.data('contribution') || '';
         var bodyHtml = '';
-        if(img) bodyHtml += '<div style="text-align:center;margin-bottom:12px;"><img src="'+img+'" alt="certificate" style="max-width:420px;max-height:280px;width:100%;height:auto;border-radius:6px;border:1px solid #eef3f8"/></div>';
+        if(img) bodyHtml += '<div class="achv-img-wrap"><a href="'+img+'" target="_blank" rel="noopener" title="Open full size"><img src="'+img+'" alt="certificate" class="achv-modal-img"/></a></div>';
         bodyHtml += '<div class="achv-modal-contribution"><p>'+contribution+'</p></div>';
         $('#achvModal .modal-title').text(title);
         $('#achvModal .modal-body').html(bodyHtml);
