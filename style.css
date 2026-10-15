@@ -450,6 +450,11 @@ section .title::after{
     background: #111;
     content: "In which I am particularly skilled";
 }
+.services .serv-content--center{
+    justify-content: center;
+    gap: 20px;
+}
+
 .services .serv-content .card{
     width: calc(33% - 20px);
     /* glass effect */
@@ -487,6 +492,49 @@ section .title::after{
     font-size: 20px;
     font-weight: 600;
     margin: 12px 0 10px 0;
+}
+
+/* Animated service icons */
+@keyframes servIconFloat{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-6px); } }
+@keyframes servIconSpin{ to{ transform: rotate(360deg); } }
+@keyframes servIconPulse{ 0%,100%{ transform: scale(1); } 50%{ transform: scale(1.15); } }
+@keyframes servIconWiggle{ 0%,100%{ transform: rotate(0); } 25%{ transform: rotate(-10deg); } 75%{ transform: rotate(10deg); } }
+@keyframes servIconBounce{ 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-9px); } }
+
+.services .serv-content .card i{ display: inline-block; }
+.services .serv-content .card i.fa-cogs{ animation: servIconSpin 7s linear infinite; }
+.services .serv-content .card i.fa-tachometer{ animation: servIconPulse 2.4s ease-in-out infinite; }
+.services .serv-content .card i.fa-plug{ animation: servIconBounce 2.6s ease-in-out infinite; }
+.services .serv-content .card i.fa-user{ animation: servIconFloat 3s ease-in-out infinite; }
+.services .serv-content .card i.fa-android{ animation: servIconFloat 3.4s ease-in-out infinite; }
+.services .serv-content .card i.fa-gamepad{ animation: servIconWiggle 3.2s ease-in-out infinite; }
+.services .serv-content .card i.fa-laptop{ animation: servIconFloat 3s ease-in-out infinite; }
+.services .serv-content .card i.fa-mobile{ animation: servIconFloat 3.2s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce){
+    .services .serv-content .card i{ animation: none !important; }
+}
+
+/* Development cards (App + Web) - pulsing teal/cyan border glow */
+.services .serv-content .card.card--dev{
+    position: relative;
+    animation: devBorderGlow 3s ease-in-out infinite;
+}
+@keyframes devBorderGlow{
+    0%, 100%{
+        border-color: rgba(0,128,128,0.9);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
+    }
+    50%{
+        border-color: #22d3ee;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04), 0 0 22px rgba(34,211,238,0.55);
+    }
+}
+@media (prefers-reduced-motion: reduce){
+    .services .serv-content .card.card--dev{
+        animation: none;
+        border-color: #22d3ee;
+    }
 }
 
 /* View More button and modal for services */
@@ -742,6 +790,70 @@ section .title::after{
     flex-wrap: wrap;
 }
 
+/* achievements category tabs */
+.achievements__tabs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.achievements__button{
+    background: #222;
+    color: #ccc;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.3s ease;
+}
+
+.achievements__button:focus{
+    outline: none;
+}
+
+.achievements__button:hover{
+    color: teal;
+    border-color: teal;
+}
+
+.achievements__button.achievements__active{
+    background: teal;
+    color: #fff;
+    border-color: teal;
+}
+
+.achievements [data-achv-content]{
+    display: none;
+}
+
+.achievements__active[data-achv-content]{
+    display: block;
+}
+
+/* achievements carousel */
+.achievements .carousel{
+    flex: 1;
+    min-width: 0;
+}
+
+.achievements .carousel .achv-card{
+    margin: 0;
+}
+
+@media (max-width: 500px){
+    .achievements__button{
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+}
+
 /* certifications separator */
 .cert-separator{
     height: 3px;
@@ -980,12 +1092,12 @@ section .title::after{
     column-gap: 1.5rem;
 }
 .qualification__title{
-    font-size: var(--normal--font-size);
-    font-weight: var(--font-medium);
+    font-size: 1rem;
+    font-weight: 700;
 }
 .qualification__subtitle{
     display: inline-block;
-    font-size: var(--small--font-size);
+    font-size: 0.8rem;
     margin-bottom: var(--mb-1);
 }
 .qualification__calender{
@@ -1011,6 +1123,23 @@ section .title::after{
 }
 .qualification__active[data-content]{
     display: block;
+}
+
+/* Institute / company icon shown before the organization name */
+.qualification__subtitle i{
+    color: var(--first-color);
+    font-size: 0.95em;
+    margin-right: .3rem;
+    vertical-align: middle;
+}
+
+/* CGPA / GPA line - matches the passing-year (calendar) styling */
+.qualification__grade{
+    font-size: 1rem;
+    color: var(--text-color-light);
+}
+.qualification__grade i{
+    color: inherit;
 }
 
 /* ----- Achievements fixes (overrides) ----- */
@@ -1045,6 +1174,75 @@ section .title::after{
 /* projects section styling */
 .projects .title::after{
     content: "---Most recent work---";
+}
+
+/* project category tabs */
+.projects__intro{
+    text-align: center;
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 820px;
+    margin: 0 auto 30px;
+}
+
+.projects__tabs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 35px;
+}
+
+.projects__button{
+    background: #222;
+    color: #ccc;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.3s ease;
+}
+
+.projects__button:focus{
+    outline: none;
+}
+
+.projects__button:hover{
+    color: teal;
+    border-color: teal;
+}
+
+.projects__button.projects__active{
+    background: teal;
+    color: #fff;
+    border-color: teal;
+}
+
+.projects [data-project-content]{
+    display: none;
+}
+
+.projects__active[data-project-content]{
+    display: block;
+}
+
+.projects .carousel .card .project-image img.logo-img{
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
+@media (max-width: 500px){
+    .projects__button{
+        font-size: 12px;
+        padding: 8px 14px;
+    }
 }
 
 .carousel-container{
@@ -1776,12 +1974,12 @@ hr {
     column-gap: 1.5rem;
 }
 .qualification__title{
-    font-size: var(--normal--font-size);
-    font-weight: var(--font-medium);
+    font-size: 1rem;
+    font-weight: 700;
 }
 .qualification__subtitle{
     display: inline-block;
-    font-size: var(--small--font-size);
+    font-size: 0.8rem;
     margin-bottom: var(--mb-1);
 }
 .qualification__calender{

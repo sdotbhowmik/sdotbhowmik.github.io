@@ -50,40 +50,112 @@ $(document).ready(function(){
 
     // typing text animation script
     var typed = new Typed(".typing", {
-        strings: ["Web Automation", "Mobile Automation", "API Verification","Performance Testing", "Database Testing"],
+        strings: ["Web Automation", "Mobile Automation", "API Verification","Performance Testing", "Database Testing", "Web Development"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
     var typed = new Typed(".typing-2", {
-        strings: ["Web Automation", "Mobile Automation", "API Testing", "Database Testing","Performance Testing", "CI/CD/DEV-OPS"],
+        strings: ["Web Automation", "Mobile Automation", "API Testing", "Database Testing","Performance Testing", "CI/CD/DEV-OPS", "Web Development"],
         typeSpeed: 100,
         backSpeed: 60,
         loop: true
     });
 
-    // owl carousel script
-    var carousel = $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 1,
-                nav: false
-            },
-            1000:{
-                items: 1,
-                nav: false
+    // owl carousel script - initialize each project category carousel
+    $('.projects .carousel').each(function(){
+        var $carousel = $(this);
+        $carousel.owlCarousel({
+            margin: 20,
+            loop: true,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplayHoverPause: true,
+            responsive: {
+                0:{
+                    items: 1,
+                    nav: false
+                },
+                600:{
+                    items: 1,
+                    nav: false
+                },
+                1000:{
+                    items: 1,
+                    nav: false
+                }
             }
-        }
+        });
+
+        // Handle previous/next button clicks for this carousel only
+        $carousel.closest('.carousel-container').find('.carousel-btn-prev').click(function(){
+            $carousel.trigger('prev.owl.carousel');
+        });
+        $carousel.closest('.carousel-container').find('.carousel-btn-next').click(function(){
+            $carousel.trigger('next.owl.carousel');
+        });
+    });
+
+    // project category tabs
+    const projectTabs = document.querySelectorAll('[data-project-target]');
+    projectTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.projectTarget);
+            document.querySelectorAll('[data-project-content]').forEach(content => {
+                content.classList.remove('projects__active');
+            });
+            target.classList.add('projects__active');
+            projectTabs.forEach(t => t.classList.remove('projects__active'));
+            tab.classList.add('projects__active');
+            // refresh carousels inside the newly shown tab (hidden carousels mis-measure width)
+            $(target).find('.carousel').trigger('refresh.owl.carousel');
+        });
+    });
+
+    // achievements carousel - 2 cards per view on desktop, 1 on mobile
+    $('.achievements .carousel').each(function(){
+        var $carousel = $(this);
+        $carousel.owlCarousel({
+            margin: 20,
+            loop: false,
+            autoplay: false,
+            nav: false,
+            responsive: {
+                0:{
+                    items: 1,
+                    nav: false
+                },
+                900:{
+                    items: 2,
+                    nav: false
+                }
+            }
+        });
+
+        // Handle previous/next button clicks for this carousel only
+        $carousel.closest('.carousel-container').find('.carousel-btn-prev').click(function(){
+            $carousel.trigger('prev.owl.carousel');
+        });
+        $carousel.closest('.carousel-container').find('.carousel-btn-next').click(function(){
+            $carousel.trigger('next.owl.carousel');
+        });
+    });
+
+    // achievement category tabs
+    const achievementTabs = document.querySelectorAll('[data-achv-target]');
+    achievementTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.achvTarget);
+            document.querySelectorAll('[data-achv-content]').forEach(content => {
+                content.classList.remove('achievements__active');
+            });
+            target.classList.add('achievements__active');
+            achievementTabs.forEach(t => t.classList.remove('achievements__active'));
+            tab.classList.add('achievements__active');
+            // refresh carousels inside the newly shown tab (hidden carousels mis-measure width)
+            $(target).find('.carousel').trigger('refresh.owl.carousel');
+        });
     });
 
     // Achievements: open details modal when 'View Details' clicked
@@ -104,15 +176,6 @@ $(document).ready(function(){
     // Horizontal scroller disabled - achievements now use grid layout
     // (Previous carousel code removed)
 
-    // Handle previous button click
-    $('.carousel-btn-prev').click(function(){
-        carousel.trigger('prev.owl.carousel');
-    });
-
-    // Handle next button click
-    $('.carousel-btn-next').click(function(){
-        carousel.trigger('next.owl.carousel');
-    });
     // Services: open modal with details when 'View More' clicked
     $('.btn-view-more').on('click', function(e){
         e.preventDefault();

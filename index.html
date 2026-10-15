@@ -10,6 +10,7 @@
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="robots" content="index, follow">
+    <meta name="description" content="Subrata K. Bhowmik — Software Test Lead with 15+ years in QA and test automation (Selenium, Playwright, Appium, API and performance testing), and a keen web developer who builds professional-grade web projects that run in production with minimal maintenance.">
     <title>Subrata Kumar Bhowmik's Portfolio</title>
     <!-- Unicons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -130,6 +131,8 @@
             
             <p>A strong team player, I’ve been recognized for my ability to collaborate effectively with both local and offshore teams. Passionate about workflow optimization, I strive to create efficient, productive, and high-performing work environments. </p>
             </br>
+            <p>Software testing is my profession; web development is my passion. I have independently built a few professional-grade web projects that are live in production and run with minimal maintenance.</p>
+            </br>
             </br>
             <div class="about__info">              
                 <div>
@@ -167,8 +170,18 @@
     <section class="achievements" id="achievements">
   <div class="max-width">
     <h2 class="title">Achievements</h2>
-    <div class="achv-grid-wrapper">
-      <div class="achv-grid">
+    <!-- Achievement category tabs -->
+    <div class="achievements__tabs">
+      <button class="achievements__button achievements__active" data-achv-target="#achv-professional"><i class="fa fa-briefcase"></i> Professional</button>
+      <button class="achievements__button" data-achv-target="#achv-academic"><i class="fa fa-graduation-cap"></i> Academic</button>
+      <button class="achievements__button" data-achv-target="#achv-interpersonal"><i class="fa fa-users"></i> Interpersonal</button>
+    </div>
+
+    <!-- Professional -->
+    <div class="achievements__content achievements__active" data-achv-content id="achv-professional">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
 
       <!-- Achievement 1 -->
       <div class="achv-card" data-img="images/certificates/outstanding-collaborator-samsung.jpg" data-contribution="Recognized for exceptional cross‑team collaboration and project quality leadership.">
@@ -271,26 +284,6 @@
       </div>
 
       <!-- Achievement 6 -->
-      <div class="achv-card" data-img="images/certificates/CODECHEF_ML_CERTIFICATE.png" data-contribution="It demonstrates not just your interest, but your dedication to mastering complex technical concepts by completing all the required lessons and projects. This achievement, secured on February 15, 2026,">
-        <div class="achv-card-inner">
-          <div class="achv-left">
-            <div class="achv-header">
-              <div class="achv-icon"><i class="fa fa-code"></i></div>
-              <h3>Certifcate of Completion</h3>
-            </div>
-            <div class="achv-details">
-              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">CODECHEF</span></div>
-              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">FEB 2026</span></div>
-            </div>
-            <button class="btn achv-view-btn">View Details</button>
-          </div>
-          <div class="achv-right">
-            <img src="images/certificates/CODECHEF_ML_CERTIFICATE.png" alt="CodeChef machine learning certificate of completion">
-          </div>
-        </div>
-      </div>
-
-      <!-- Achievement 7 -->
       <div class="achv-card" data-img="images/certificates/membership-certificate.jpg" data-contribution="Certified member of the Institution of Diploma Engineers, Bangladesh — Membership No. 33696, issued 16 May 2011.">
         <div class="achv-card-inner">
           <div class="achv-left">
@@ -311,8 +304,172 @@
         </div>
       </div>
 
-      </div> <!-- /.achv-grid -->
-    </div> <!-- /.achv-grid-wrapper -->
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /achv-professional -->
+
+    <!-- Academic -->
+    <div class="achievements__content" data-achv-content id="achv-academic">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+
+      <!-- University Scholarship -->
+      <div class="achv-card" data-img="https://placehold.co/640x420/111111/14b8a6?text=University+Scholarship" data-contribution="Awarded a tuition-fee scholarship in recognition of outstanding academic results during undergraduate studies.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-graduation-cap"></i></div>
+              <h3>UNIVERSITY SCHOLARSHIP</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SONARGAON UNIVERSITY</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">2022 - 2024</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="https://placehold.co/640x420/111111/14b8a6?text=University+Scholarship" alt="University Scholarship" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+          </div>
+        </div>
+      </div>
+
+      <!-- CodeChef -->
+      <div class="achv-card" data-img="images/certificates/CODECHEF_ML_CERTIFICATE.png" data-contribution="It demonstrates not just your interest, but your dedication to mastering complex technical concepts by completing all the required lessons and projects. This achievement, secured on February 15, 2026,">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-code"></i></div>
+              <h3>Certifcate of Completion</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">CODECHEF</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">FEB 2026</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="images/certificates/CODECHEF_ML_CERTIFICATE.png" alt="CodeChef machine learning certificate of completion">
+          </div>
+        </div>
+      </div>
+
+      <!-- Dean's List (Sample) -->
+      <div class="achv-card" data-img="https://placehold.co/640x420/111111/14b8a6?text=Deans+List+Award" data-contribution="Sample card — recognized for maintaining a high GPA across an academic term. Edit or replace with your own award.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-trophy"></i></div>
+              <h3>DEAN'S LIST AWARD (Sample)</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SONARGAON UNIVERSITY</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">2023 (Sample)</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="https://placehold.co/640x420/111111/14b8a6?text=Deans+List+Award" alt="Dean's List Award (Sample)" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+          </div>
+        </div>
+      </div>
+
+      <!-- Academic Excellence (Sample) -->
+      <div class="achv-card" data-img="https://placehold.co/640x420/111111/14b8a6?text=Academic+Excellence" data-contribution="Sample card — awarded for outstanding academic performance. Edit or replace with your own award.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-certificate"></i></div>
+              <h3>ACADEMIC EXCELLENCE AWARD (Sample)</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">SONARGAON UNIVERSITY</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">2024 (Sample)</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="https://placehold.co/640x420/111111/14b8a6?text=Academic+Excellence" alt="Academic Excellence Award (Sample)" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /achv-academic -->
+
+    <!-- Interpersonal -->
+    <div class="achievements__content" data-achv-content id="achv-interpersonal">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+
+      <!-- IELTS -->
+      <div class="achv-card" data-img="https://placehold.co/640x420/111111/14b8a6?text=IELTS" data-contribution="Planning to take the IELTS exam to strengthen international communication and collaboration skills.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-language"></i></div>
+              <h3>IELTS (UPCOMING)</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">BRITISH COUNCIL / IDP</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Planned</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="https://placehold.co/640x420/111111/14b8a6?text=IELTS" alt="IELTS (Upcoming)" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+          </div>
+        </div>
+      </div>
+
+      <!-- Public Speaking (Sample) -->
+      <div class="achv-card" data-img="https://placehold.co/640x420/111111/14b8a6?text=Public+Speaking" data-contribution="Sample card — for delivering presentations and public speaking engagements. Edit or replace with your own.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-microphone"></i></div>
+              <h3>PUBLIC SPEAKING &amp; COMMUNICATION (Sample)</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">TOASTMASTERS INTERNATIONAL</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Year (Sample)</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="https://placehold.co/640x420/111111/14b8a6?text=Public+Speaking" alt="Public Speaking &amp; Communication (Sample)" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+          </div>
+        </div>
+      </div>
+
+      <!-- Community Volunteering (Sample) -->
+      <div class="achv-card" data-img="https://placehold.co/640x420/111111/14b8a6?text=Volunteering" data-contribution="Sample card — for contributing to community and volunteering initiatives. Edit or replace with your own.">
+        <div class="achv-card-inner">
+          <div class="achv-left">
+            <div class="achv-header">
+              <div class="achv-icon"><i class="fa fa-handshake-o"></i></div>
+              <h3>COMMUNITY VOLUNTEERING (Sample)</h3>
+            </div>
+            <div class="achv-details">
+              <div class="detail-item"><span class="detail-label">Issued By:</span><span class="detail-value">ORGANISATION (Sample)</span></div>
+              <div class="detail-item"><span class="detail-label">When:</span><span class="detail-value">Year (Sample)</span></div>
+            </div>
+            <button class="btn achv-view-btn">View Details</button>
+          </div>
+          <div class="achv-right">
+            <img src="https://placehold.co/640x420/111111/14b8a6?text=Volunteering" alt="Community Volunteering (Sample)" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+          </div>
+        </div>
+      </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /achv-interpersonal -->
   </div> <!-- /.max-width -->
 </section>
 
@@ -496,6 +653,54 @@
         </div>
       </div>
     </div>
+
+    <!-- Divider Line -->
+    <div class="bars">
+      <div class="info"></div>
+      <div class="line html">
+        <br>
+        <hr>
+        <br>
+      </div>
+    </div>
+
+    <!-- Final Row: Development Services -->
+    <div class="serv-content serv-content--center">
+      <!-- App Development Card -->
+      <div class="card card--dev">
+        <div class="box">
+          <i class="fa fa-mobile"></i>
+          <div class="text">App Development</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Build cross-platform mobile apps for Android and iOS.</li>
+              <li>Native and hybrid development with modern frameworks.</li>
+              <li>Integrate REST APIs, authentication and push notifications.</li>
+              <li>Publish and maintain apps on Google Play and the App Store.</li>
+              <li>QA-driven workflow for testable, reliable releases.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Web Development Card -->
+      <div class="card card--dev">
+        <div class="box">
+          <i class="fa fa-laptop"></i>
+          <div class="text">Web Development</div>
+          <button class="btn-view-more">View More</button>
+          <div class="service-details" style="display:none">
+            <ul align="left">
+              <li>Build responsive, production-ready websites and web applications.</li>
+              <li>Front-end with HTML5, CSS3 and JavaScript, plus REST API integrations.</li>
+              <li>Deploy and host with CI/CD and minimal ongoing maintenance.</li>
+              <li>Focus on performance, accessibility and clean, maintainable code.</li>
+              <li>Professional-grade personal projects currently live in production.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Service Details Modal -->
@@ -558,7 +763,47 @@
                     </div>
                   </div>
                 </div>
-                <!--Skills 2-->
+                <!--Skills 2: AI / ML for QA-->
+                <div class="skills__content skills__close">
+                  <div class="skills__header">
+                    <i class="uil uil-robot skills__icon"></i>
+                    <div>
+                      <h1 class="skills__title">AI / ML</h1>
+                      <span class="skills__subtitle">Essential for QA</span>
+                    </div>
+                    <i class="uil uil-angle-down skills__arrow"></i>
+                  </div>
+                  <div class="skills__list grid">
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">AI Test Generation</h3>
+                        <span class="skills__number">70%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__70"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">Prompt Engineering</h3>
+                        <span class="skills__number">80%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__80"></span>
+                      </div>
+                    </div>
+                    <div class="skills__data">
+                      <div class="skills__title">
+                        <h3 class="skills__name">ML Test Analytics</h3>
+                        <span class="skills__number">60%</span>
+                      </div>
+                      <div class="skills__bar">
+                        <span class="skills__percentage skills__60"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!--Skills 3-->
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i class="uil uil-server-network skills__icon"></i>
@@ -589,7 +834,7 @@
                     </div>
                   </div>
                 </div>
-                <!--Skills 3-->
+                <!--Skills 4-->
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i class="uil uil-android skills__icon"></i>
@@ -620,7 +865,7 @@
                     </div>
                   </div>
                 </div>
-                <!--Skills 4-->
+                <!--Skills 5-->
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i class="uil uil-cloud skills__icon"></i>
@@ -651,7 +896,7 @@
                     </div>
                   </div>
                 </div>
-                <!--Skills 5-->
+                <!--Skills 6-->
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i class="uil uil-database skills__icon"></i>
@@ -682,7 +927,7 @@
                     </div>
                   </div>
                 </div>
-                <!--Skills 6-->
+                <!--Skills 7-->
                 <div class="skills__content skills__close">
                   <div class="skills__header">
                     <i class="uil uil-book skills__icon"></i>
@@ -737,23 +982,23 @@
           <div class="qualification section  column right" id="works">
             <div class="qualification__container container">
               <div class="qualification__tabs">
-                <div class="qualification__button button--flex qualification__active" data-target='#education'>
+                <div class="qualification__button button--flex" data-target='#education'>
                   <i class="uil uil-graduation-cap qualification__icon"></i> Education
                 </div>
-                <div class="qualification__button button--flex" data-target='#work'>
+                <div class="qualification__button button--flex qualification__active" data-target='#work'>
                   <i class="uil uil-briefcase-alt qualification__icon"></i> Work
                 </div>
               </div>
               <div class="qualification__sections">
                 <!--Qualification content 1-->
-                <div class="qualification__content qualification__active" data-content id="education">
+                <div class="qualification__content" data-content id="education">
                   <!--Qualification  1-->
                   <div class="qualification__data">
                     <div>
                       <h3 class="qualification__title">Bechelor in Engineering (CSE)</h3>
-                      <span class="qualification__subtitle">World University of Bangladesh <br> CGPA: Dropout </span>
+                      <span class="qualification__subtitle"><i class="uil uil-university"></i>&nbsp;Sonargaon University <br> <span class="qualification__grade"><i class="uil uil-award"></i>&nbsp;CGPA: 3.84</span></span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2013 - 2017
+                        <i class="uil uil-calendar-alt"></i> 2022 - 2024
                       </div>
                     </div>
                     <div>
@@ -770,7 +1015,7 @@
                     </div>
                     <div>
                       <h3 class="qualification__title">Diploma In Computer Engineering</h3>
-                      <span class="qualification__subtitle">Cumilla Ploytechnic Institute <br>GPA: 3.30 </span>
+                      <span class="qualification__subtitle"><i class="uil uil-university"></i>&nbsp;Cumilla Ploytechnic Institute <br> <span class="qualification__grade"><i class="uil uil-award"></i>&nbsp;GPA: 3.30</span></span>
                       <div class="qualification__calender">
                         <i class="uil uil-calendar-alt"></i> 2005 - 2009
                       </div>
@@ -780,7 +1025,7 @@
                   <div class="qualification__data">
                     <div>
                       <h3 class="qualification__title">Secondary School Certificate</h3>
-                      <span class="qualification__subtitle">Yusuf M.T. High School,Cumilla <br>GPA: 4.38 </span>
+                      <span class="qualification__subtitle"><i class="uil uil-university"></i>&nbsp;Yusuf M.T. High School,Cumilla <br> <span class="qualification__grade"><i class="uil uil-award"></i>&nbsp;GPA: 4.38</span></span>
                       <div class="qualification__calender">
                         <i class="uil uil-calendar-alt"></i> 2000 - 2005
                       </div>
@@ -792,14 +1037,14 @@
                   </div>
                 </div>
                 <!--Qualification content 2-->
-                <div class="qualification__content" data-content id="work">
+                <div class="qualification__content qualification__active" data-content id="work">
                   <!--Qualification  1-->
                   <div class="qualification__data">
                     <div>
-                      <h3 class="qualification__title">Chief Engineer</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Sr. Chief Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2022 - 202_
+                        <i class="uil uil-calendar-alt"></i> 2024 - 2026
                       </div>
                     </div>
                     <div>
@@ -815,20 +1060,20 @@
                       <span class="qualification__line"></span>
                     </div>
                     <div>
-                      <h3 class="qualification__title">Technical Lead</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Chief Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2020 - 2022
+                        <i class="uil uil-calendar-alt"></i> 2022 - 2024
                       </div>
                     </div>
                   </div>
                   <!--Qualification  3-->
                   <div class="qualification__data">
                     <div>
-                      <h3 class="qualification__title">Lead Engineer</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Technical Lead</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2019 - 2020
+                        <i class="uil uil-calendar-alt"></i> 2020 - 2022
                       </div>
                     </div>
                     <div>
@@ -844,20 +1089,20 @@
                       <span class="qualification__line"></span>
                     </div>
                     <div>
-                      <h3 class="qualification__title">Sr. Software Engineer</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Lead Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2017 - 2019
+                        <i class="uil uil-calendar-alt"></i> 2019 - 2020
                       </div>
                     </div>
                   </div>
                   <!--Qualification  5-->
                   <div class="qualification__data">
                     <div>
-                      <h3 class="qualification__title">Software Engineer</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Sr. Software Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2015 - 2017
+                        <i class="uil uil-calendar-alt"></i> 2017 - 2019
                       </div>
                     </div>
                     <div>
@@ -873,20 +1118,20 @@
                       <span class="qualification__line"></span>
                     </div>
                     <div>
-                      <h3 class="qualification__title">Junior Engineer</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Software Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2013 - 2015
+                        <i class="uil uil-calendar-alt"></i> 2015 - 2017
                       </div>
                     </div>
                   </div>
                   <!--Qualification  7-->
                   <div class="qualification__data">
                     <div>
-                      <h3 class="qualification__title">Associate Engineer</h3>
-                      <span class="qualification__subtitle">Samsung R&D Institute Bangladesh</span>
+                      <h3 class="qualification__title">Junior Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
                       <div class="qualification__calender">
-                        <i class="uil uil-calendar-alt"></i> 2011 - 2013
+                        <i class="uil uil-calendar-alt"></i> 2013 - 2015
                       </div>
                     </div>
                     <div>
@@ -902,11 +1147,25 @@
                       <span class="qualification__line"></span>
                     </div>
                     <div>
+                      <h3 class="qualification__title">Associate Engineer</h3>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Samsung R&D Institute Bangladesh</span>
+                      <div class="qualification__calender">
+                        <i class="uil uil-calendar-alt"></i> 2011 - 2013
+                      </div>
+                    </div>
+                  </div>
+                  <!--Qualification  9-->
+                  <div class="qualification__data">
+                    <div>
                       <h3 class="qualification__title">IT Officer</h3>
-                      <span class="qualification__subtitle">Ocean Group Ltd.</span>
+                      <span class="qualification__subtitle"><i class="uil uil-building"></i>&nbsp;Ocean Group Ltd.</span>
                       <div class="qualification__calender">
                         <i class="uil uil-calendar-alt"></i> 2010 - 2011
                       </div>
+                    </div>
+                    <div>
+                      <span class="qualification__rounder"></span>
+                      <span class="qualification__line"></span>
                     </div>
                   </div>
                 </div>
@@ -919,6 +1178,20 @@
 <section class="projects" id="projects">
   <div class="max-width">
     <h2 class="title">My Projects</h2>
+
+    <p class="projects__intro">A blend of QA automation work and personal web development projects — several of which are live in production with minimal maintenance.</p>
+
+    <!-- Project category tabs -->
+    <div class="projects__tabs">
+      <button class="projects__button projects__active" data-project-target="#qa-projects"><i class="fa fa-check-square-o"></i> QA Projects</button>
+      <button class="projects__button" data-project-target="#web-projects"><i class="fa fa-code"></i> Web Development</button>
+      <button class="projects__button" data-project-target="#app-projects"><i class="fa fa-mobile"></i> App Development</button>
+      <button class="projects__button" data-project-target="#aiml-projects"><i class="fa fa-flask"></i> AI/ML Projects</button>
+      <button class="projects__button" data-project-target="#tools-projects"><i class="fa fa-wrench"></i> Tools</button>
+    </div>
+
+    <!-- QA Projects -->
+    <div class="projects__content projects__active" data-project-content id="qa-projects">
     <div class="carousel-container">
       <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
       <div class="carousel owl-carousel">
@@ -1053,6 +1326,434 @@
       </div>
       <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
     </div>
+    </div><!-- /qa-projects -->
+
+    <!-- Web Development -->
+    <div class="projects__content" data-project-content id="web-projects">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Portfolio Website" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Personal Portfolio Website</h3>
+              <p class="project-description">A responsive personal portfolio website featuring a dark theme, animated sections and a filterable project showcase built with modern web technologies.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                  <li>jQuery</li>
+                  <li>Responsive Design</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Fintech Web App" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Fintech Web Application</h3>
+              <p class="project-description">A financial technology web application offering interactive dashboards and data visualisation to turn raw financial data into actionable insights.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                  <li>Chart Libraries</li>
+                  <li>REST API</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="REST API Test Dashboard" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">REST API Test Dashboard</h3>
+              <p class="project-description">A web dashboard that visualises API test results, response times and pass/fail trends across multiple test runs for quicker quality decisions.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python Flask</li>
+                  <li>REST API</li>
+                  <li>Bootstrap</li>
+                  <li>Chart.js</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Admin Dashboard" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Responsive Admin Dashboard</h3>
+              <p class="project-description">A clean, mobile-first admin dashboard template with sidebar navigation, data tables and reusable UI components for internal tools.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Bootstrap</li>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>JavaScript</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /web-projects -->
+
+    <!-- App Development -->
+    <div class="projects__content" data-project-content id="app-projects">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="Android QA Utility App" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Android QA Utility App</h3>
+              <p class="project-description">A native Android utility app used as a target to practise and demonstrate real-world mobile automation scenarios end to end.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Android SDK</li>
+                  <li>Java</li>
+                  <li>UiAutomator</li>
+                  <li>Appium</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter Test Companion" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Flutter Test Companion</h3>
+              <p class="project-description">A cross-platform Flutter app built to validate mobile UI automation across Android and iOS from a single codebase.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Flutter</li>
+                  <li>Dart</li>
+                  <li>Appium</li>
+                  <li>XCUITest (iOS)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Appium Test Recorder" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Appium Test Recorder</h3>
+              <p class="project-description">A helper tool that records user gestures on a device and generates reusable Appium action code to speed up mobile test authoring.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>Appium</li>
+                  <li>ADB</li>
+                  <li>Android SDK</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="Cross Platform Demo" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Mobile Cross-Platform Demo</h3>
+              <p class="project-description">A demo application showcasing login, navigation and offline flows used for cross-platform mobile regression testing.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>React Native</li>
+                  <li>JavaScript</li>
+                  <li>Appium</li>
+                  <li>Jest</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /app-projects -->
+
+    <!-- AI/ML Projects -->
+    <div class="projects__content" data-project-content id="aiml-projects">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Test Failure Prediction" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Test Failure Prediction</h3>
+              <p class="project-description">A machine learning model that predicts likely test failures using historical test-run data and code-change features to target regression effort.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>scikit-learn</li>
+                  <li>pandas</li>
+                  <li>NumPy</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Log Anomaly Detection" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Log Anomaly Detection</h3>
+              <p class="project-description">An anomaly detection pipeline that flags unusual patterns in application logs, helping to surface hidden defects much earlier.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>scikit-learn</li>
+                  <li>NLP</li>
+                  <li>pandas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="Visual UI Validation" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Visual UI Validation</h3>
+              <p class="project-description">A computer-vision based checker that compares UI screenshots to automatically detect pixel-level visual regressions.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>OpenCV</li>
+                  <li>Pillow</li>
+                  <li>Selenium</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="Test Coverage Recommender" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Test Coverage Recommender</h3>
+              <p class="project-description">A recommendation engine that suggests high-risk areas and test cases to prioritise based on defect history and change frequency.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>pandas</li>
+                  <li>Machine Learning</li>
+                  <li>Data Analysis</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /aiml-projects -->
+
+    <!-- Tools -->
+    <div class="projects__content" data-project-content id="tools-projects">
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
+      <div class="carousel owl-carousel">
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Mindmap Tool" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Mindmap Tool</h3>
+              <p class="project-description">An online mind-mapping tool for visually organising ideas and test scenarios with a clean drag-and-drop canvas.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>JavaScript</li>
+                  <li>HTML5 Canvas</li>
+                  <li>CSS3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="QR Scanner" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">QR Scanner</h3>
+              <p class="project-description">A fast browser-based QR code scanner and generator that works directly from the camera or an uploaded image.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>JavaScript</li>
+                  <li>WebRTC</li>
+                  <li>Canvas API</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="Media Player" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Media Player</h3>
+              <p class="project-description">A lightweight in-browser media player supporting audio and video playback with a clean, responsive interface.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>HTML5</li>
+                  <li>JavaScript</li>
+                  <li>CSS3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="Teleprompter" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Teleprompter</h3>
+              <p class="project-description">A customisable teleprompter that scrolls script text at an adjustable speed, ideal for recording presentations and videos.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>JavaScript</li>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-btn carousel-btn-next"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    </div><!-- /tools-projects -->
+
   </div>
 </section>
 
@@ -1063,7 +1764,7 @@
         <div class="contact-content">
           <div class="column left">
             <div class="text">Get in Touch</div>
-            <p>Anything else in mind? Just drop me a line and ask for anything with which you think i could be helpful. I am looking forward to hearing from you.</p>
+            <p>Anything else in mind? Just drop me a line and ask for anything with which you think i could be helpful. Whether it's software testing or web development, I'm always happy to help. I am looking forward to hearing from you.</p>
             <div class="icons">
               <div class="row">
                 <i class="fa fa-user"></i>
