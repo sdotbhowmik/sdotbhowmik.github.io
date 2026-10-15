@@ -131,6 +131,43 @@ section .title::after{
   max-height: 55px;  /* Adjust the size of the logo as needed */
   width: auto;
 }
+.navbar .logo a{
+    position: relative;
+    display: inline-block;
+}
+.logo .logo-glow{
+    position: absolute;
+    inset: -4px -12px;
+    z-index: 0;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center,
+        rgba(0, 229, 229, 0.65) 0%,
+        rgba(0, 229, 229, 0.25) 45%,
+        transparent 72%);
+    filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    animation: logo-glow 3.2s ease-in-out infinite;
+}
+.logo img{
+    position: relative;
+    z-index: 1;
+    animation: logo-shine 3.2s ease-in-out infinite;
+}
+@keyframes logo-glow{
+    0%, 100%{ opacity: .3; transform: scale(.96); }
+    50%{ opacity: .65; transform: scale(1.05); }
+}
+@keyframes logo-shine{
+    0%, 100%{ filter: drop-shadow(0 0 4px rgba(0, 229, 229, 0)); }
+    50%{ filter: drop-shadow(0 0 8px rgba(0, 229, 229, .9))
+                drop-shadow(0 0 20px rgba(0, 229, 229, .55)); }
+}
+@media (prefers-reduced-motion: reduce){
+    .logo .logo-glow,
+    .logo img{ animation: none; }
+    .logo .logo-glow{ opacity: .5; }
+}
 
 .navbar .menu li{
     list-style: none;
