@@ -330,9 +330,6 @@ section .title::after{
 }
 .home .home-content .text-1{
     font-size: 27px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
 }
 .home .home-content .text-4{
     font-size: 20px;
@@ -355,18 +352,6 @@ section .title::after{
     .home .home-content .text-3{
         font-size: clamp(14px, 1.5vw, 20px);
     }
-}
-.home .home-content .hero-avatar{
-    display: block;
-    width: 72px;
-    height: 72px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 0;
-    border: 3px solid teal;
-    box-shadow: 0 0 0 4px rgba(0,128,128,0.18),
-                0 0 22px rgba(0,128,128,0.45);
 }
 .home .home-content a{
     display: inline-block;
@@ -866,6 +851,22 @@ section .title::after{
 .achievements .detail-value{
     color: black;
     flex-wrap: wrap;
+}
+.achv-card{
+    flex-direction: column;
+    align-items: stretch;
+}
+.achv-header{
+    width: 100%;
+    margin-bottom: 14px;
+}
+.achv-header h3{
+    flex: 1;
+    min-width: 0;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* achievements category tabs */
