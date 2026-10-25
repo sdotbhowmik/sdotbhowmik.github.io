@@ -511,11 +511,71 @@ section .title::after{
 .services .title::after,
 .projects .title::after{
     background: #111;
-    content: "In which I am particularly skilled";
+}
+.services .title::after{
+    content: "what i do";
 }
 .services .serv-content--center{
     justify-content: center;
     gap: 20px;
+}
+
+/* --- Service groups (tabbed) --- */
+.services .serv-content{
+    row-gap: 24px;
+}
+
+.services .serv-tabs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 34px;
+}
+
+.services .serv-tab{
+    background: #222;
+    color: #ccc;
+    border: 2px solid #333;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    transition: all 0.3s ease;
+}
+
+.services .serv-tab:focus{
+    outline: none;
+}
+
+.services .serv-tab:hover{
+    color: teal;
+    border-color: teal;
+}
+
+.services .serv-tab.serv-tab--active{
+    background: teal;
+    color: #fff;
+    border-color: teal;
+}
+
+.services .serv-group{
+    display: none;
+}
+
+.services .serv-group--active{
+    display: block;
+    animation: servGroupIn 0.35s ease both;
+}
+
+@keyframes servGroupIn{
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .services .serv-content .card{
@@ -573,6 +633,7 @@ section .title::after{
 .services .serv-content .card i.fa-gamepad{ animation: servIconWiggle 3.2s ease-in-out infinite; }
 .services .serv-content .card i.fa-laptop{ animation: servIconFloat 3s ease-in-out infinite; }
 .services .serv-content .card i.fa-mobile{ animation: servIconFloat 3.2s ease-in-out infinite; }
+.services .serv-content .card i.fa-wrench{ animation: servIconWiggle 3.6s ease-in-out infinite; }
 
 @media (prefers-reduced-motion: reduce){
     .services .serv-content .card i{ animation: none !important; }
@@ -776,7 +837,7 @@ section .title::after{
 }
 .achievements .title::after{
     background: #111;
-    content: "recognitions";
+    content: "milestones & recognition";
 }
 .achievements .achv-content{
     display: flex;
@@ -951,7 +1012,7 @@ section .title::after{
 }
 .certifications .title::after{
     background: #fff;
-    content: "credentials";
+    content: "certified & verified";
 }
 .certifications .cert-content{
     display: flex;
@@ -1046,6 +1107,7 @@ section .title::after{
 .skills .title::after{
     content: "what i know";
 }
+
 .skills .skills-content .column{
     width: calc(50% - 20px);
 }
@@ -1252,7 +1314,7 @@ section .title::after{
 
 /* projects section styling */
 .projects .title::after{
-    content: "---Most recent work---";
+    content: "what i've built";
 }
 
 /* project category tabs */
@@ -1505,6 +1567,16 @@ section .title::after{
     font-size: 12px;
 }
 
+.projects .carousel .card .btn-demo.btn-demo--outline{
+    background-color: transparent;
+    color: teal;
+}
+
+.projects .carousel .card .btn-demo.btn-demo--outline:hover{
+    background-color: teal;
+    color: #fff;
+}
+
 
 
 .owl-dots{
@@ -1532,99 +1604,141 @@ section .title::after{
 
 /* contact section styling */
 .contact .title::after{
-    content: "get in touch";
+    content: "let's talk";
 }
 .contact .contact-content .column{
-    width: calc(50% - 30px);
+    width: 100%;
 }
 .contact .contact-content .text{
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-.contact .contact-content .left p{
-    text-align: justify;
+
+/* full-width two-column contact card */
+.contact .contact-card{
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 42px;
+    align-items: start;
+    background: #fff;
+    border: 1px solid #e6e8ec;
+    border-radius: 18px;
+    padding: 36px;
+    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.07);
+}
+.contact .contact-card p{
+    color: #4b5563;
+    text-align: left;
+    line-height: 1.75;
+}
+.contact .contact-card__details{
+    border-left: 1px solid #eef0f3;
+    padding-left: 38px;
 }
 .contact .contact-content .left .icons{
-    margin: 10px 0;
+    margin: 0;
 }
 .contact .contact-content .row{
     display: flex;
-    height: 65px;
+    height: auto;
+    min-height: 62px;
+    padding: 11px 0;
     align-items: center;
+    border-top: 1px solid #eef0f3;
+}
+.contact .contact-content .row:first-child{
+    border-top: none;
+}
+.contact .contact-icon{
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(0, 128, 128, 0.1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.contact .contact-content .row .contact-icon i{
+    font-size: 18px;
+    color: teal;
 }
 .contact .contact-content .row .info{
-    margin-left: 30px;
-}
-.contact .contact-content .row i{
-    font-size: 25px;
-    color: teal;
+    margin-left: 16px;
+    min-width: 0;
 }
 .contact .contact-content .info .head{
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6b7280;
 }
 .contact .contact-content .info .sub-title{
-    color: #333;
+    color: #111827;
+    font-weight: 600;
+    font-size: 15px;
+    overflow-wrap: anywhere;
 }
-.contact .right form .fields{
-    display: flex;
+
+/* quick contact actions (inside the card) */
+.contact .contact-actions{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 22px;
 }
-.contact .right form .field,
-.contact .right form .fields .field{
-    height: 45px;
-    width: 100%;
-    margin-bottom: 15px;
+.contact .contact-action{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 14px;
+    border-radius: 11px;
+    border: 1px solid #d8dee7;
+    background: #fff;
+    color: #1f2937;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s ease;
 }
-.contact .right form .textarea{
-    height: 80px;
-    width: 100%;
-}
-.contact .right form .name{
-    margin-right: 10px;
-}
-.contact .right form .email{
-    margin-left: 10px;  
-}
-.contact .right form .field input,
-.contact .right form .textarea textarea{
-    height: 100%;
-    width: 100%;
-    border: 1px solid lightgrey;
-    border-radius: 6px;
-    outline: none;
-    padding: 0 15px;
-    font-size: 17px;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-}
-.contact .right form .field input:focus,
-.contact .right form .textarea textarea:focus{
-    border-color: #b3b3b3;
-}
-.contact .right form .textarea textarea{
-    padding-top: 10px;
-    resize: none;
-}
-.contact .right form .button{
-    height: 47px;
-    width: 170px;
-}
-.contact .right form .button button{
-    width: 100%;
-    height: 100%;
-    border: 2px solid teal;
-    background: teal;
-    color: #fff;
-    outline: none;
-    font-size: 20px;
-    font-weight: 500;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-.contact .right form .button button:hover{
+.contact .contact-action i{
+    font-size: 14px;
     color: teal;
-    background: none;
+}
+.contact .contact-action:hover{
+    background: rgba(0, 128, 128, 0.06);
+    border-color: teal;
+    color: teal;
+    transform: translateY(-2px);
+}
+.contact .contact-action--primary{
+    background: linear-gradient(135deg, #008080, #006666);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 10px 22px rgba(0, 128, 128, 0.3);
+}
+.contact .contact-action--primary i{
+    color: #fff;
+}
+.contact .contact-action--primary:hover{
+    background: linear-gradient(135deg, #0a9999, #008080);
+    color: #fff;
+}
+
+@media (max-width: 690px){
+    .contact .contact-card{
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 26px;
+    }
+    .contact .contact-card__details{
+        border-left: none;
+        border-top: 1px solid #eef0f3;
+        padding-left: 0;
+        padding-top: 20px;
+    }
 }
 
 /* footer section styling */
@@ -1662,7 +1776,7 @@ footer span a:hover{
         padding: 0 50px;
     }
 }
-@media (max-width: 947px){
+@media (max-width: 1150px){
     .menu-btn{
         display: block;
         z-index: 999;
@@ -1729,11 +1843,8 @@ footer span a:hover{
         padding-left: 0;
     }
 
-    .home .home-content .text-2{
-        font-size: 70px;
-    }
     .home .home-content .text-3{
-        font-size: 35px;
+        font-size: clamp(20px, 4.4vw, 30px);
     }
     .home .home-content a{
         font-size: 23px;
@@ -1776,11 +1887,8 @@ footer span a:hover{
     .max-width{
         padding: 0 23px;
     }
-    .home .home-content .text-2{
-        font-size: 60px;
-    }
     .home .home-content .text-3{
-        font-size: 32px;
+        font-size: clamp(20px, 4.4vw, 30px);
     }
     .home .home-content a{
         font-size: 20px;
@@ -1802,12 +1910,6 @@ footer span a:hover{
 }
 
 @media (max-width: 500px) {
-    .home .home-content .text-2{
-        font-size: 50px;
-    }
-    .home .home-content .text-3{
-        font-size: 27px;
-    }
     .about .about-content .right .text,
     .skills .skills-content .left .text{
         font-size: 19px;
@@ -1853,12 +1955,8 @@ footer span a:hover{
         height: 40px;
         font-size: 14px;
     }
-    .contact .right form .fields{
-        flex-direction: column;
-    }
-    .contact .right form .name,
-    .contact .right form .email{
-        margin: 0;
+    .contact .contact-actions{
+        grid-template-columns: 1fr;
     }
     .scroll-up-btn{
         right: 15px;
@@ -2242,7 +2340,7 @@ hr {
     justify-content: center;
     align-items: center;
 }
-@media (max-width: 991px){
+@media (max-width: 1199px){
     .home-grid{
         grid-template-columns: 1fr;
         gap: 40px;
@@ -2557,21 +2655,21 @@ hr {
     display: inline-block;
     background: linear-gradient(135deg, #008080 0%, #006666 100%);
     color: #fff;
-    font-size: 25px;
-    padding: 12px 36px;
+    font-size: 15px;
+    padding: 20px 20px;
     font-weight: 500;
     border: none;
     border-radius: 0;
     clip-path: polygon(
         0 0,
-        calc(100% - 12px) 0,
-        100% 12px,
+        calc(100% - 9px) 0,
+        100% 9px,
         100% 100%,
-        12px 100%,
-        0 calc(100% - 12px)
+        9px 100%,
+        0 calc(100% - 9px)
     );
     box-shadow:
-        0 6px 18px rgba(0,128,128,0.45),
+        0 4px 12px rgba(0,128,128,0.4),
         inset 0 1px 0 rgba(255,255,255,0.25);
     transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
     will-change: transform;
@@ -2588,9 +2686,9 @@ hr {
         inset 0 1px 0 rgba(255,255,255,0.35);
 }
 
-/* Mobile: shrink slightly but keep shape */
+/* Mobile: keep the compact shape */
 @media (max-width: 691px){
-    .home .home-content a.cta{ font-size: 20px; padding: 10px 30px; }
+    .home .home-content a.cta{ font-size: 14px; padding: 8px 18px; }
 }
 
 
@@ -2611,4 +2709,36 @@ hr {
 .about .max-width{
     position: relative;
     z-index: 1;
+}
+
+/* ============================================================
+   HERO NAME — full name on a single line
+   ============================================================ */
+
+.home-left{
+    container-type: inline-size;
+}
+
+.home .home-content .text-2{
+    /* fallback for browsers without container query units */
+    font-size: clamp(22px, 4vw, 44px);
+    /* ~12.2em wide, so 8cqi always fits the hero column */
+    font-size: clamp(20px, 8cqi, 55px);
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+}
+
+.home .home-content a.cta i{
+    margin-right: 8px;
+}
+
+/* ============================================================
+   NAVIGATION — nine items need a little less breathing room
+   ============================================================ */
+
+@media (min-width: 1151px) and (max-width: 1300px){
+    .navbar .menu li a{
+        font-size: 16px;
+        margin-left: 16px;
+    }
 }

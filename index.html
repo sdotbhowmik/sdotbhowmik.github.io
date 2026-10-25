@@ -10,7 +10,7 @@
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Subrata K. Bhowmik — Software Test Lead with 15+ years in QA and test automation (Selenium, Playwright, Appium, API and performance testing), and a keen web developer who builds professional-grade web projects that run in production with minimal maintenance.">
+    <meta name="description" content="Subrata Kumar Bhowmik — Software Test Lead with 15+ years in QA and test automation (Selenium, Playwright, Appium, API and performance testing), and a keen web developer who builds professional-grade web projects that run in production with minimal maintenance.">
     <title>Subrata Kumar Bhowmik's Portfolio</title>
     <!-- Unicons-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
@@ -44,6 +44,12 @@
           </li>
           <li>
             <a href="#about" class="menu-btn">About</a>
+          </li>
+          <li>
+            <a href="#achievements" class="menu-btn">Achievements</a>
+          </li>
+          <li>
+            <a href="#certifications" class="menu-btn">Certifications</a>
           </li>
           <li>
             <a href="#services" class="menu-btn">Services</a>
@@ -88,12 +94,12 @@
         <div class="home-left">
           <div class="home-content hero-stagger">
             <div class="text-1">Hello, my name is</div>
-            <div class="text-2">Subrata K. Bhowmik</div>
+            <div class="text-2">Subrata Kumar Bhowmik</div>
             <div class="text-3"><span>Seasoned SQA Engineer</span> &amp; <span>Test Automation Specialist</span>
             </div>
             <div class="text-4">Any Project in Mind?</div>
             <span class="cta-wrap">
-              <a href="tel:+8801818224947" class="cta">Call Me</a>
+              <a href="https://wa.me/8801818224947" class="cta" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i> Let's Talk</a>
             </span>
 			<br>
 			<br>
@@ -109,9 +115,6 @@
               </a>
               <a href="https://github.com/sdotbhowmik" target="_blank">
                 <i class="fa fa-github" aria-hidden="true"></i><span>sdotbhowmik</span>
-              </a>
-              <a href="https://wa.me/8801818224947" target="_blank">
-                <i class="fa fa-whatsapp" aria-hidden="true"></i><span>sdotbhowmik</span>
               </a>
             </div>
           </div>
@@ -131,7 +134,7 @@
             <img src="images/profile-1.jpeg" alt="">
           </div>
           <div class="column right">
-            <div class="text">I'm Subrata and I've knowledge on <br>
+            <div class="text">I'm Subrata Kumar Bhowmik and I've knowledge on <br>
               <span class="typing-2"></span>
             </div>
             <p>Hello, I am a professional Software Test Lead with more than decade of experience in manual as well as automated testing. I am ISTQB certified professional focusing on backend API, database, UI and performance testing of web and mobile applications. I am proficient in Python, Selenium, and Appium which enable me to deliver robust and dependable software products.</p>
@@ -545,9 +548,21 @@
  <!-- services section start -->
 <section class="services" id="services">
   <div class="max-width">
-    <h2 class="title">My Expertise</h2>
-    <!-- First Row of Cards -->
-    <div class="serv-content">
+    <h2 class="title">Services</h2>
+
+    <!-- Service category tabs -->
+    <div class="serv-tabs" role="tablist" aria-label="Service categories">
+      <button class="serv-tab serv-tab--active" data-serv-target="#serv-testing" role="tab" aria-selected="true">
+        <i class="fa fa-check-square-o"></i> Testing Services
+      </button>
+      <button class="serv-tab" data-serv-target="#serv-development" role="tab" aria-selected="false">
+        <i class="fa fa-code"></i> Development Services
+      </button>
+    </div>
+
+    <!-- Quality Assurance Group -->
+    <div class="serv-group serv-group--active" id="serv-testing">
+      <div class="serv-content">
       <!-- Functional Testing Card -->
       <div class="card">
         <div class="box">
@@ -599,18 +614,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- Divider Line -->
-    <div class="bars">
-      <div class="info"></div>
-      <div class="line html">
-        <br>
-        <hr>
-        <br>
-      </div>
-    </div>
-    <!-- Second Row of Cards -->
-    <div class="serv-content">
       <!-- UX Testing Card -->
       <div class="card">
         <div class="box">
@@ -662,55 +665,65 @@
           </div>
         </div>
       </div>
-    </div>
+      </div><!-- /.serv-content -->
+    </div><!-- /.serv-group (QA) -->
 
-    <!-- Divider Line -->
-    <div class="bars">
-      <div class="info"></div>
-      <div class="line html">
-        <br>
-        <hr>
-        <br>
-      </div>
-    </div>
-
-    <!-- Final Row: Development Services -->
-    <div class="serv-content serv-content--center">
-      <!-- App Development Card -->
-      <div class="card card--dev">
-        <div class="box">
-          <i class="fa fa-mobile"></i>
-          <div class="text">App Development</div>
-          <button class="btn-view-more">View More</button>
-          <div class="service-details" style="display:none">
-            <ul align="left">
-              <li>Build cross-platform mobile apps for Android and iOS.</li>
-              <li>Native and hybrid development with modern frameworks.</li>
-              <li>Integrate REST APIs, authentication and push notifications.</li>
-              <li>Publish and maintain apps on Google Play and the App Store.</li>
-              <li>QA-driven workflow for testable, reliable releases.</li>
-            </ul>
+    <!-- Development Group -->
+    <div class="serv-group" id="serv-development">
+      <div class="serv-content serv-content--center">
+        <!-- App Development Card -->
+        <div class="card card--dev">
+          <div class="box">
+            <i class="fa fa-mobile"></i>
+            <div class="text">App Development</div>
+            <button class="btn-view-more">View More</button>
+            <div class="service-details" style="display:none">
+              <ul align="left">
+                <li>Build cross-platform mobile apps for Android and iOS.</li>
+                <li>Native and hybrid development with modern frameworks.</li>
+                <li>Integrate REST APIs, authentication and push notifications.</li>
+                <li>Publish and maintain apps on Google Play and the App Store.</li>
+                <li>QA-driven workflow for testable, reliable releases.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Web Development Card -->
+        <div class="card card--dev">
+          <div class="box">
+            <i class="fa fa-laptop"></i>
+            <div class="text">Web Development</div>
+            <button class="btn-view-more">View More</button>
+            <div class="service-details" style="display:none">
+              <ul align="left">
+                <li>Build responsive, production-ready websites and web applications.</li>
+                <li>Front-end with HTML5, CSS3 and JavaScript, plus REST API integrations.</li>
+                <li>Deploy and host with CI/CD and minimal ongoing maintenance.</li>
+                <li>Focus on performance, accessibility and clean, maintainable code.</li>
+                <li>Professional-grade personal projects currently live in production.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Custom Tools Development Card -->
+        <div class="card card--dev">
+          <div class="box">
+            <i class="fa fa-wrench"></i>
+            <div class="text">Custom Tools Development</div>
+            <button class="btn-view-more">View More</button>
+            <div class="service-details" style="display:none">
+              <ul align="left">
+                <li>Build internal QA utilities and automation accelerators.</li>
+                <li>Create CLI tools, dashboards and browser extensions.</li>
+                <li>Python tooling around ADB, Appium, Selenium and REST APIs.</li>
+                <li>Package and document tools so teams can adopt them quickly.</li>
+                <li>Maintain and extend tools as the test stack evolves.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-      <!-- Web Development Card -->
-      <div class="card card--dev">
-        <div class="box">
-          <i class="fa fa-laptop"></i>
-          <div class="text">Web Development</div>
-          <button class="btn-view-more">View More</button>
-          <div class="service-details" style="display:none">
-            <ul align="left">
-              <li>Build responsive, production-ready websites and web applications.</li>
-              <li>Front-end with HTML5, CSS3 and JavaScript, plus REST API integrations.</li>
-              <li>Deploy and host with CI/CD and minimal ongoing maintenance.</li>
-              <li>Focus on performance, accessibility and clean, maintainable code.</li>
-              <li>Professional-grade personal projects currently live in production.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    </div><!-- /.serv-group (Development) -->
   </div>
 
   <!-- Service Details Modal -->
@@ -1226,7 +1239,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://github.com/sdotbhowmik/SeleniumBaseProject" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1251,7 +1264,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="https://github.com/sdotbhowmik/Appium-PythonDemo.git" class="btn-demo" target="_blank"><i class="fa fa-link"></i> View on GitHub</a>
+              <a href="https://github.com/sdotbhowmik/Appium-PythonDemo" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1276,7 +1289,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://github.com/sdotbhowmik/playwright-python-pom-showcase" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1328,7 +1341,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://github.com/sdotbhowmik/RobotFrameWorkPractice" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1364,7 +1377,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://sdotbhowmik.github.io/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
+              <a href="https://github.com/sdotbhowmik/sdotbhowmik.github.io" class="btn-demo btn-demo--outline" target="_blank" rel="noopener"><i class="fa fa-github"></i> Source</a>
             </div>
           </div>
         </div>
@@ -1389,7 +1403,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://fintech.subrata.tech/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
             </div>
           </div>
         </div>
@@ -1413,7 +1427,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://github.com/sdotbhowmik/API-Testing-Pytest-Requests" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1437,7 +1451,80 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://github.com/sdotbhowmik/master_html_admin_project" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="StackGarage Corporate Website" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">StackGarage Corporate Website</h3>
+              <p class="project-description">A multi-page website for a Bangladesh-based software firm, with an English/Bengali language toggle, alternating dark and light sections, scroll-reveal animations and a mobile-first responsive layout. Frontend only, no build step.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>HTML5</li>
+                  <li>CSS3</li>
+                  <li>Vanilla JavaScript</li>
+                  <li>GitHub Pages</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://sdotbhowmik.github.io/Stacks-Garage/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
+              <a href="https://github.com/sdotbhowmik/Stacks-Garage" class="btn-demo btn-demo--outline" target="_blank" rel="noopener"><i class="fa fa-github"></i> Source</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PCPoint Booking System" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">PCPoint Booking System</h3>
+              <p class="project-description">A full-stack booking system for a cyber café with an admin dashboard, table availability checks, booking management, date-range reports and customer messaging. Built with PHP and MySQL.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                  <li>JavaScript</li>
+                  <li>Admin Dashboard</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/pcpoint_booking" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Expense Tracker" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Expense Tracker</h3>
+              <p class="project-description">A personal finance tracker with deposit and withdrawal logging, per-user authentication, JSON-backed ledgers and reporting views for monthly spending.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>PHP</li>
+                  <li>MySQL</li>
+                  <li>JavaScript</li>
+                  <li>JSON Data Store</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/ExpenseTracker" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1452,6 +1539,33 @@
     <div class="carousel-container">
       <button class="carousel-btn carousel-btn-prev"><i class="fa fa-chevron-left"></i></button>
       <div class="carousel owl-carousel">
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="One UI Controls" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">One UI Controls</h3>
+              <p class="project-description">One UI 7-style volume and media control sheet for Samsung phones still on One UI 6.1 — quick panel tile, media card with transport controls, per-stream volume, and optional hardware volume-key takeover. Built with Kotlin and Jetpack Compose; no root, no internet permission, no analytics.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Kotlin</li>
+                  <li>Jetpack Compose</li>
+                  <li>Material 3</li>
+                  <li>AccessibilityService</li>
+                  <li>NotificationListenerService</li>
+                  <li>TileService</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/Samsung-OneUI-Controls" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+              <a href="https://github.com/sdotbhowmik/Samsung-OneUI-Controls/releases/latest" class="btn-demo btn-demo--outline" target="_blank" rel="noopener"><i class="fa fa-download"></i> Download APK</a>
+            </div>
+          </div>
+        </div>
 
         <div class="card">
           <div class="box">
@@ -1544,7 +1658,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://github.com/sdotbhowmik/react_native_login_template" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1685,7 +1799,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://mindmap.subrata.tech/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
+              <a href="https://github.com/sdotbhowmik/mindMapGenerator" class="btn-demo btn-demo--outline" target="_blank" rel="noopener"><i class="fa fa-github"></i> Source</a>
             </div>
           </div>
         </div>
@@ -1708,7 +1823,7 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://qr.subrata.tech/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
             </div>
           </div>
         </div>
@@ -1731,7 +1846,8 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://mediaplayer.subrata.tech/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
+              <a href="https://github.com/sdotbhowmik/MediaPlayer" class="btn-demo btn-demo--outline" target="_blank" rel="noopener"><i class="fa fa-github"></i> Source</a>
             </div>
           </div>
         </div>
@@ -1754,7 +1870,103 @@
               </div>
             </div>
             <div class="project-actions">
-              <a href="#" class="btn-demo"><i class="fa fa-link"></i> View Project</a>
+              <a href="https://teleprompter.subrata.tech/" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-external-link"></i> View Live</a>
+              <a href="https://github.com/sdotbhowmik/teleprompter" class="btn-demo btn-demo--outline" target="_blank" rel="noopener"><i class="fa fa-github"></i> Source</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="SignInKey Verifier" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">SignInKey Verifier</h3>
+              <p class="project-description">A command-line tool that extracts the signing key from any APK and compares two keys side by side, so you can confirm whether a build was signed with the same certificate.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>keytool</li>
+                  <li>APK Signing</li>
+                  <li>CLI Tooling</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/SignInKeyVerifierTools" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg" alt="Udemy Business Downloader" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Udemy Business Downloader</h3>
+              <p class="project-description">A Chrome extension that adds bulk download support for courses on Udemy Business, with a DataTables-based picker for choosing the lectures to save.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Chrome Extension</li>
+                  <li>JavaScript</li>
+                  <li>DataTables</li>
+                  <li>Bootstrap</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/Ext.UdemyBusinessDownloader" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="KeepAlive Utility" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">KeepAlive Keep-Awake Utility</h3>
+              <p class="project-description">A tiny Windows utility that presses a modifier key every five minutes so the workstation never auto-locks during long test runs, downloads or unattended builds. Dependencies install themselves on first launch.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>PyAutoGUI</li>
+                  <li>Windows Batch</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/KeepAlive_Bot" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="box">
+            <div class="project-image">
+              <img class="logo-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Customer Data Collector" onerror="this.onerror=null;this.src='images/cert-placeholder.svg';">
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">Customer Data Collector</h3>
+              <p class="project-description">A two-phase SeleniumBase scraper that walks a customer portal to collect IDs, then enriches each record into Excel. A Pending/Processed status column makes every run resumable.</p>
+              <div class="project-stack">
+                <h4>Tools & Stack:</h4>
+                <ul>
+                  <li>Python</li>
+                  <li>SeleniumBase</li>
+                  <li>OpenPyXL</li>
+                  <li>Excel Reporting</li>
+                </ul>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/sdotbhowmik/cafcsn_webdata_scrap" class="btn-demo" target="_blank" rel="noopener"><i class="fa fa-github"></i> View on GitHub</a>
             </div>
           </div>
         </div>
@@ -1773,67 +1985,57 @@
         <h2 class="title">Contact me</h2>
         <div class="contact-content">
           <div class="column left">
-            <div class="text">Get in Touch</div>
-            <p>Anything else in mind? Just drop me a line and ask for anything with which you think i could be helpful. Whether it's software testing or web development, I'm always happy to help. I am looking forward to hearing from you.</p>
-            <div class="icons">
-              <div class="row">
-                <i class="fa fa-user"></i>
-                <div class="info">
-                  <div class="head">Name</div>
-                  <div class="sub-title">Subrata K. Bhowmik</div>
+            <div class="contact-card">
+              <div class="contact-card__intro">
+                <div class="text">Get in Touch</div>
+                <p>Anything else in mind? Just drop me a line and ask for anything with which you think i could be helpful. Whether it's software testing or web development, I'm always happy to help. I am looking forward to hearing from you.</p>
+                <div class="contact-actions">
+                  <a class="contact-action contact-action--primary" href="https://wa.me/8801818224947" target="_blank" rel="noopener"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+                  <a class="contact-action" href="mailto:sdotbhowmik@gmail.com"><i class="fa fa-envelope"></i> Email</a>
+                  <a class="contact-action" href="https://www.linkedin.com/in/sdotbhowmik/" target="_blank" rel="noopener"><i class="fa fa-linkedin"></i> LinkedIn</a>
+                  <a class="contact-action" href="https://github.com/sdotbhowmik" target="_blank" rel="noopener"><i class="fa fa-github"></i> GitHub</a>
                 </div>
               </div>
-              <div class="row">
-                <i class="fa fa-map-marker"></i>
-                <div class="info">
-                  <div class="head">Address</div>
-                  <div class="sub-title">Majar Road, Lalkuthi Bazar, Dhaka, Bangladesh</div>
-                </div>
-              </div>
-              <div class="row">
-                <i class="fa fa-envelope"></i>
-                <div class="info">
-                  <div class="head">Email</div>
-                  <div class="sub-title">sdotbhowmik@gmail.com</div>
-                </div>
-              </div>
-              <div class="row">
-                <i class="fa fa-mobile"></i>
-                <div class="info">
-                  <div class="head">Mobile</div>
-                  <div class="sub-title">+88 01818 224947</div>
+              <div class="contact-card__details">
+                <div class="icons">
+                  <div class="row">
+                    <span class="contact-icon"><i class="fa fa-user"></i></span>
+                    <div class="info">
+                      <div class="head">Name</div>
+                      <div class="sub-title">Subrata Kumar Bhowmik</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <span class="contact-icon"><i class="fa fa-map-marker"></i></span>
+                    <div class="info">
+                      <div class="head">Address</div>
+                      <div class="sub-title">Majar Road, Lalkuthi Bazar, Dhaka, Bangladesh</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <span class="contact-icon"><i class="fa fa-envelope"></i></span>
+                    <div class="info">
+                      <div class="head">Email</div>
+                      <div class="sub-title">sdotbhowmik@gmail.com</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <span class="contact-icon"><i class="fa fa-mobile"></i></span>
+                    <div class="info">
+                      <div class="head">Mobile</div>
+                      <div class="sub-title">+88 01818 224947</div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="column right">
-            <div class="text">Message me</div>
-            <form action="#">
-              <div class="fields">
-                <div class="field name">
-                  <input type="text" placeholder="Name" required>
-                </div>
-                <div class="field email">
-                  <input type="email" placeholder="Email" required>
-                </div>
-              </div>
-              <div class="field">
-                <input type="text" placeholder="Project" required>
-              </div>
-              <div class="field textarea">
-                <textarea cols="30" rows="10" placeholder="Descriptions.." required></textarea>
-              </div>
-              <div class="button">
-                <button type="submit">Send message</button>
-              </div>
-            </form>
           </div>
         </div>
       </div>
     </section>
     <!-- footer section start -->
     <footer>
-      <span>Designed and developed By <a href="https:www.facebook.com/sdotbhowmik" target="_blank">Subrata K. Bhowmik</a> | <span class="fa fa-copyright"></span> 2026 All rights reserved. </span>
+      <span>Designed and developed By <a href="https:www.facebook.com/sdotbhowmik" target="_blank">Subrata Kumar Bhowmik</a> | <span class="fa fa-copyright"></span> 2026 All rights reserved. </span>
     </footer>
     <script src="pipeline-config.js" defer></script>
     <script src="animations.js" defer></script>

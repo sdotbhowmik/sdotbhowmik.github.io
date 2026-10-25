@@ -106,6 +106,24 @@ $(document).ready(function(){
         });
     });
 
+    // service category tabs (Testing / Development)
+    const servTabs = document.querySelectorAll('[data-serv-target]');
+    servTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const target = document.querySelector(tab.dataset.servTarget);
+            document.querySelectorAll('.serv-group').forEach(group => {
+                group.classList.remove('serv-group--active');
+            });
+            target.classList.add('serv-group--active');
+            servTabs.forEach(t => {
+                t.classList.remove('serv-tab--active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('serv-tab--active');
+            tab.setAttribute('aria-selected', 'true');
+        });
+    });
+
     // achievements carousel - 2 cards per view on desktop, 1 on mobile
     $('.achievements .carousel').each(function(){
         var $carousel = $(this);
